@@ -1,7 +1,6 @@
 ---
 templateKey: about-page
-title: About us
-path: /about
+title: About me
 ---
 
 ## Sharing Ideas and Meeting Others
