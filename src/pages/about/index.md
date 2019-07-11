@@ -1,5 +1,5 @@
 ---
-templateKey: about-page
+templateKey: AboutPage
 title: About us
 path: /about
 ---

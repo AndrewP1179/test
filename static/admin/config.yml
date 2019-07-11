@@ -9,10 +9,11 @@ collections:
     label: Blog
     folder: blog
     create: true
+    slug: '{{year}}-{{month}}-{{day}}_{{slug}}'
     fields:
-      - { name: path, label: Path }
-      - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
+      - { name: path, label: Path, default: '/blog/' }
+      - { name: date, label: Date, widget: date }
       - { name: body, label: Body, widget: markdown }
   - name: 'pages'
     label: 'Pages'
