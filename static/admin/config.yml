@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: AndrewP1179/women
+  repo: AndrewP1179/test
 
 media_folder: static/assets
 
