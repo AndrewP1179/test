@@ -2,7 +2,7 @@
 templateKey: eventsTemplate
 title: new event
 eventsImage: /static/assets/d291m_0kayy.jpg
-path: /events/
+path: /events/first
 time: 2019-07-13T16:06:08.664Z
 place: new place
 speakerName: new speaker
