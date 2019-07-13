@@ -4,6 +4,7 @@ import Layout from '../components/layout/Layout';
 import BlogPreview from '../components/blog/BlogPreview';
 import EventsPreview from '../components/events/EventsPreview';
 import SpeakersPreview from '../components/speakers/SpeakersPreview';
+import SponsorsPreview from '../components/sponsors/SponsorsPreview';
 
 const HomePage = (): React.Node => (
   <div>
@@ -11,6 +12,7 @@ const HomePage = (): React.Node => (
       <BlogPreview />
       <EventsPreview />
       <SpeakersPreview />
+      <SponsorsPreview />
     </Layout>
   </div>
 );

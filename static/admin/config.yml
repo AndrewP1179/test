@@ -44,3 +44,16 @@ collections:
       - { name: 'speakerName', label: "Speaker's Name" }
       - { name: 'speakersImage', label: "Speaker's Image", widget: 'image' }
       - { name: 'body', label: 'Description', widget: 'markdown' }
+  - label: 'sponsors'
+    name: 'sponsors'
+    folder: 'sponsorsImages'
+    create: true
+    identifier_field: galleryImages
+    fields:
+      - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'sponsor' }
+      - label: 'sponsor'
+        name: 'galleryImages'
+        widget: 'list'
+        identifier_field: sponsor
+        fields:
+          - { label: 'sponsor', name: 'sponsor', widget: 'image' }
