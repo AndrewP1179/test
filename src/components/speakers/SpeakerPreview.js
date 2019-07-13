@@ -7,7 +7,7 @@ const SpeakerPreview = (): React.Node => (
     <StaticQuery
       query={graphql`
         query speakersQuery {
-          allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "SpeakersTemplate" } } }) {
+          allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "speakersTemplate" } } }) {
             edges {
               node {
                 frontmatter {

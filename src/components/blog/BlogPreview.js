@@ -7,7 +7,7 @@ const BlogPreview = (): React.Node => (
     <StaticQuery
       query={graphql`
         query HomePageQuery {
-          allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "BlogTemplate" } } }) {
+          allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "blogTemplate" } } }) {
             edges {
               node {
                 frontmatter {
