@@ -13,8 +13,9 @@ const EventsTemplate = ({ data }: PropsType): React.Node => {
         <div className="title">{frontmatter.title}</div>
         <div className="date">{frontmatter.date}</div>
         <div className="place">{frontmatter.place}</div>
+        <img src={frontmatter.eventsImage.replace('/static', '')} alt="" />
+        <img src={frontmatter.speakersImage.replace('/static', '')} alt="" />
         <div className="speaker-name">{frontmatter.speakerName}</div>
-        {/* <img src={frontmatter.image.replace('/static', '')} alt="" /> */}
         <div className="blog-post-content" dangerouslySetInnerHTML={{ __html: html }} />
       </div>
     </div>
@@ -28,7 +29,8 @@ export const events = graphql`
       html
       frontmatter {
         title
-        image
+        eventsImage
+        speakersImage
         date
         place
         speakerName

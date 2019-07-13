@@ -35,14 +35,13 @@ collections:
     fields:
       - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'EventsTemplate' }
       - { name: 'title', label: 'Title' }
-      - { name: 'image', label: "Event's Image", widget: 'image' }
+      - { name: 'eventsImage', label: "Event's Image", widget: 'image' }
       - { name: 'path', label: 'Path', default: '/events/' }
       - { name: 'time', label: 'Time', widget: 'datetime' }
       - { name: 'place', label: 'Place' }
       - { name: 'speakerName', label: "Speaker's Name" }
-      - { name: 'image', label: "Speaker's Image", widget: 'image' }
+      - { name: 'speakersImage', label: "Speaker's Image", widget: 'image' }
       - { name: 'body', label: 'Description', widget: 'markdown' }
-
   - name: 'speakers'
     label: 'Speakers'
     folder: 'speakers'
@@ -50,5 +49,6 @@ collections:
     fields:
       - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'SpeakersTemplate' }
       - { name: 'title', label: 'Name' }
-      - { name: 'work', label: 'Work Position' }
+      - { name: 'path', label: 'Path', default: '/speakers/' }
+      - { name: 'job', label: 'Work Position' }
       - { name: 'image', label: "Speaker's Image", widget: 'image' }
