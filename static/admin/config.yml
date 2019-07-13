@@ -23,6 +23,7 @@ collections:
       - file: 'src/pages/about/index.md'
         label: 'About'
         name: 'about'
+        slug: '{{year}}-{{month}}-{{day}}_{{slug}}'
         fields:
           - { name: 'path', label: 'Path' }
           - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'aboutTemplate' }
@@ -32,6 +33,7 @@ collections:
     label: 'Events'
     folder: 'events'
     create: true
+    slug: '{{year}}-{{month}}-{{day}}_{{slug}}'
     fields:
       - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'eventsTemplate' }
       - { name: 'title', label: 'Title' }
@@ -42,13 +44,3 @@ collections:
       - { name: 'speakerName', label: "Speaker's Name" }
       - { name: 'speakersImage', label: "Speaker's Image", widget: 'image' }
       - { name: 'body', label: 'Description', widget: 'markdown' }
-  - name: 'speakers'
-    label: 'Speakers'
-    folder: 'speakers'
-    create: true
-    fields:
-      - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'speakersTemplate' }
-      - { name: 'title', label: 'Name' }
-      - { name: 'path', label: 'Path', default: '/speakers/' }
-      - { name: 'job', label: 'Work Position' }
-      - { name: 'image', label: "Speaker's Image", widget: 'image' }

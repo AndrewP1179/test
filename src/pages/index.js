@@ -2,13 +2,15 @@
 import React from 'react';
 import Layout from '../components/layout/Layout';
 import BlogPreview from '../components/blog/BlogPreview';
-import SpeakerPreview from '../components/speakers/SpeakerPreview';
+import EventsPreview from '../components/events/EventsPreview';
+import SpeakersPreview from '../components/speakers/SpeakersPreview';
 
 const HomePage = (): React.Node => (
   <div>
     <Layout>
       <BlogPreview />
-      <SpeakerPreview />
+      <EventsPreview />
+      <SpeakersPreview />
     </Layout>
   </div>
 );
