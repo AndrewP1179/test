@@ -1,3 +1,14 @@
-import React from "react"
+//@flow
+import React from 'react';
+import Layout from '../components/layout/Layout';
+import BlogPreview from '../components/blog/BlogPreview';
 
-export default () => <div>Hello world!</div>
+const HomePage = (): React.Node => (
+  <div>
+    <Layout>
+      <BlogPreview />
+    </Layout>
+  </div>
+);
+
+export default HomePage;

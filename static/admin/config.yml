@@ -5,16 +5,18 @@ backend:
 media_folder: static/assets
 
 collections:
-  - name: blog
-    label: Blog
-    folder: blog
+  - name: 'blog'
+    label: 'Blog'
+    folder: 'blog'
     create: true
     slug: '{{year}}-{{month}}-{{day}}_{{slug}}'
     fields:
-      - { name: title, label: Title }
-      - { name: path, label: Path, default: '/blog/' }
-      - { name: date, label: Date, widget: date }
-      - { name: body, label: Body, widget: markdown }
+      - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'BlogTemplate' }
+      - { name: 'title', label: 'Title' }
+      - { name: 'path', label: 'Path', default: '/blogs/' }
+      - { name: 'date', label: 'Date', widget: 'date' }
+      - { name: 'image', label: 'Cover Image', widget: 'image' }
+      - { name: 'body', label: 'Body', widget: 'markdown' }
   - name: 'pages'
     label: 'Pages'
     files:
@@ -22,7 +24,31 @@ collections:
         label: 'About'
         name: 'about'
         fields:
-          - { name: path, label: Path }
-          - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'about-page' }
+          - { name: 'path', label: 'Path' }
+          - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'AboutTemplate' }
           - { label: 'Title', name: 'title', widget: 'string' }
           - { label: 'Body', name: 'body', widget: 'markdown' }
+  - name: 'events'
+    label: 'Events'
+    folder: 'events'
+    create: true
+    fields:
+      - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'EventsTemplate' }
+      - { name: 'title', label: 'Title' }
+      - { name: 'image', label: "Event's Image", widget: 'image' }
+      - { name: 'path', label: 'Path', default: '/events/' }
+      - { name: 'time', label: 'Time', widget: 'datetime' }
+      - { name: 'place', label: 'Place' }
+      - { name: 'speakerName', label: "Speaker's Name" }
+      - { name: 'image', label: "Speaker's Image", widget: 'image' }
+      - { name: 'body', label: 'Description', widget: 'markdown' }
+
+  - name: 'speakers'
+    label: 'Speakers'
+    folder: 'speakers'
+    create: true
+    fields:
+      - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'SpeakersTemplate' }
+      - { name: 'title', label: 'Name' }
+      - { name: 'work', label: 'Work Position' }
+      - { name: 'image', label: "Speaker's Image", widget: 'image' }

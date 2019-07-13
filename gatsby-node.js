@@ -1,3 +1,5 @@
+/*eslint-disable*/
+
 const path = require('path');
 
 exports.createPages = ({ boundActionCreators, graphql }) => {
@@ -15,7 +17,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
             id
             frontmatter {
               path
-              title
+              templateKey
             }
           }
         }
@@ -29,7 +31,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
       createPage({
         path: node.frontmatter.path,
-        component: blogPostTemplate,
+        component: path.resolve(`src/templates/${node.frontmatter.templateKey}.js`),
         context: {},
       });
     });

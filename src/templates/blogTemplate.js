@@ -1,6 +1,10 @@
+//@flow
 import React from 'react';
+import { graphql } from 'gatsby';
 
-const Template = ({ data }) => {
+type PropsType = { data: string };
+
+const Template = ({ data }: PropsType): React.Node => {
   const { markdownRemark } = data;
   const { frontmatter, html } = markdownRemark;
   return (
@@ -8,6 +12,7 @@ const Template = ({ data }) => {
       <div className="blog-post">
         <h1>{frontmatter.title}</h1>
         <h2>{frontmatter.date}</h2>
+        <img src={frontmatter.image.replace('/static', '')} alt="" />
         <div className="blog-post-content" dangerouslySetInnerHTML={{ __html: html }} />
       </div>
     </div>
@@ -22,6 +27,8 @@ export const pageQuery = graphql`
       frontmatter {
         path
         title
+        date
+        image
       }
     }
   }

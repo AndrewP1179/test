@@ -1,6 +1,6 @@
 ---
 path: /about
-templateKey: about-page
+templateKey: AboutTemplate
 title: About me
 ---
 
