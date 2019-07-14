@@ -3,7 +3,7 @@ templateKey: eventsTemplate
 title: Management
 eventsImage: /static/assets/20935062_1123341784434371_8686167862893783118_o.jpg
 path: /events/manager
-time: 2019-07-10T10:33:43.024Z
+time: '2019-07-10 01:33'
 place: Adyax
 speakerName: Anya
 speakerJob: Manager
