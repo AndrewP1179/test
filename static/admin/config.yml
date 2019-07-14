@@ -39,9 +39,10 @@ collections:
       - { name: 'title', label: 'Title' }
       - { name: 'eventsImage', label: "Event's Image", widget: 'image' }
       - { name: 'path', label: 'Path', default: '/events/' }
-      - { name: 'time', label: 'Time', widget: 'datetime' }
+      - { name: 'time', label: 'Time', widget: 'datetime', format: 'YYYY-MM-DD HH:mm' }
       - { name: 'place', label: 'Place' }
       - { name: 'speakerName', label: "Speaker's Name" }
+      - { name: 'speakerJob', label: "Speaker's Job" }
       - { name: 'speakersImage', label: "Speaker's Image", widget: 'image' }
       - { name: 'body', label: 'Description', widget: 'markdown' }
   - label: 'sponsors'

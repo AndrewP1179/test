@@ -3,4 +3,10 @@
 @import 'helpers/variables';
 @import 'helpers/mixins';
 @import 'helpers/mq';
+
 @import 'header/navbar';
+@import 'header/masthead';
+
+@import 'about/about-preview';
+
+@import 'speakers/speaker-preview';

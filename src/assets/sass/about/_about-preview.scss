@@ -1,0 +1,35 @@
+.about-preview-wrapper {
+  padding-top: rem(90px);
+  padding-bottom: rem(25px);
+  text-align: center;
+  background-color: #ff005a;
+  .title {
+    margin-top: rem(115px);
+    margin-bottom: rem(55px);
+    padding: rem(0 350px);
+    font-size: rem(40px);
+    line-height: 1.4;
+    color: #ffffff;
+  }
+  .read-more {
+    margin-bottom: rem(60px);
+    border-color: #fff;
+    a {
+      color: #fff;
+    }
+  }
+}
+.indexes {
+  .number,
+  .title {
+    letter-spacing: 2px;
+    @include bold;
+    font-size: rem(16px);
+    text-transform: uppercase;
+    color: rgb(13, 13, 89);
+  }
+
+  .title {
+    margin-top: rem(20px);
+  }
+}

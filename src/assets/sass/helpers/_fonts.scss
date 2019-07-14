@@ -1,31 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900|Roboto&subset=latin-ext');
-
-@mixin futura-extra {
-  font-family: FuturaExtra, sans-serif;
-}
-
-@mixin futura {
-  font-family: Futura, sans-serif;
-}
-
-@mixin lato {
-  font-family: Lato, sans-serif;
-}
-
-@mixin supply {
-  font-family: Supply, sans-serif;
-}
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&display=swap');
 
 @mixin thin {
-  font-weight: 200;
+  font-weight: 300;
 }
 
 @mixin normal {
   font-weight: 400;
-}
-
-@mixin semibold {
-  font-weight: 600;
 }
 
 @mixin bold {
@@ -34,4 +15,8 @@
 
 @mixin extrabold {
   font-weight: 900;
+}
+
+body {
+  font-family: 'Lato', sans-serif !important;
 }

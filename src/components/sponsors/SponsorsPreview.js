@@ -11,7 +11,10 @@ const SponsorsPreview = (): React.Node => (
             edges {
               node {
                 frontmatter {
-                   
+                  templateKey
+                  galleryImages {
+                    sponsor
+                  }
                 }
               }
             }
@@ -20,11 +23,14 @@ const SponsorsPreview = (): React.Node => (
       `}
       render={(data: Object): React.Node => (
         <div className="sponsors-preview">
-          {data.allMarkdownRemark.edges.map((item: Object): React.Node => (
-            <div className="sponsor" key={item.node.frontmatter.sponsor}>
-              <img src={item.node.frontmatter.sponsor.replace('/static', '')} alt="" />
-            </div>
-          ))}
+          {data.allMarkdownRemark.edges.map((item: Object): Function =>
+            item.node.frontmatter.galleryImages.map((image: Object): React.Node => (
+              <div className="sponsor" key={image.sponsor}>
+                {console.log(image)}
+                <img src={image.sponsor.replace('/static', '')} alt="" />
+              </div>
+            )),
+          )}
         </div>
       )}
     />

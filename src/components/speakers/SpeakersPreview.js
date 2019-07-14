@@ -13,6 +13,7 @@ const SpeakersPreview = (): React.Node => (
                 frontmatter {
                   speakerName
                   speakersImage
+                  speakerJob
                 }
               }
             }
@@ -22,9 +23,17 @@ const SpeakersPreview = (): React.Node => (
       render={(data: Object): React.Node => (
         <div className="speaker-preview">
           {data.allMarkdownRemark.edges.map((item: Object): React.Node => (
-            <div className="event" key={item.node.frontmatter.speakerName}>
-              <img src={item.node.frontmatter.speakersImage.replace('/static', '')} alt="" />
-              <div className="title">{item.node.frontmatter.speakerName}</div>
+            <div
+              className="speaker"
+              key={item.node.frontmatter.speakerName}
+              style={{ backgroundImage: `url(${item.node.frontmatter.speakersImage.replace('/static', '')})` }}
+            >
+              <div className="speaker-card">
+                <div className="info-wrapper">
+                  <div className="title">{item.node.frontmatter.speakerName}</div>
+                  <div className="job">{item.node.frontmatter.speakerJob}</div>
+                </div>
+              </div>
             </div>
           ))}
         </div>

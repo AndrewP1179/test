@@ -1,6 +1,8 @@
+$base-font-size: 16px !default;
 $rem-fallback: true !default;
 $rem-px-only: false !default;
 $rhythm-unit: 'rem';
+$rem-baseline: $base-font-size !default;
 
 //
 // Variables
@@ -9,7 +11,6 @@ $rhythm-unit: 'rem';
 // before importing the normalize-scss library.
 
 // The font size set on the root html element.
-$base-font-size: 16px !default;
 
 // The base line height determines the basic unit of vertical rhythm.
 $base-line-height: 24px !default;

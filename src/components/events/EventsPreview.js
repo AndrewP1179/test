@@ -4,6 +4,10 @@ import { StaticQuery, graphql } from 'gatsby';
 
 const EventsPreview = (): React.Node => (
   <div className="events-preview-wrapper">
+    <div className="indexes">
+      <div className="number">03</div>
+      <div className="title">Agenda</div>
+    </div>
     <StaticQuery
       query={graphql`
         query ShowEventsQuery {
@@ -12,11 +16,9 @@ const EventsPreview = (): React.Node => (
               node {
                 frontmatter {
                   title
-                  eventsImage
                   time
                   place
                   speakerName
-                  speakersImage
                 }
               }
             }
@@ -27,8 +29,9 @@ const EventsPreview = (): React.Node => (
         <div className="event-preview">
           {data.allMarkdownRemark.edges.map((item: Object): React.Node => (
             <div className="event" key={item.node.frontmatter.title}>
-              <img src={item.node.frontmatter.eventsImage.replace('/static', '')} alt="" />
               <div className="title">{item.node.frontmatter.title}</div>
+              <div className="time">{item.node.frontmatter.time}</div>
+              <div className="speaker-name">{item.node.frontmatter.speakerName}</div>
             </div>
           ))}
         </div>

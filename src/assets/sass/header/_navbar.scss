@@ -1,0 +1,17 @@
+.navbar {
+  .nav-list {
+    margin: rem(95px);
+    text-align: center;
+    li {
+      display: inline-block;
+      margin: rem(0 35px);
+      padding: rem(5px);
+      font-size: rem(14px);
+      cursor: pointer;
+      transition: all 0.2s ease-in;
+      &:hover {
+        color: #52ffff;
+      }
+    }
+  }
+}
