@@ -3,7 +3,7 @@ templateKey: eventsTemplate
 title: Drupal
 eventsImage: /static/assets/20935062_1123341784434371_8686167862893783118_o.jpg
 path: /events/first
-time: 2019-07-13T16:06:08.664Z
+time: '2019-07-16 19:06'
 place: Ihub
 speakerName: Nikro
 speakerJob: Developer
