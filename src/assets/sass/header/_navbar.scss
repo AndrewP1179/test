@@ -2,16 +2,24 @@
   .nav-list {
     margin: rem(95px);
     text-align: center;
-    li {
+    li,
+    a {
       display: inline-block;
-      margin: rem(0 35px);
-      padding: rem(5px);
       font-size: rem(14px);
+      text-decoration: none;
       cursor: pointer;
       transition: all 0.2s ease-in;
+
       &:hover {
         color: #52ffff;
       }
+    }
+    li {
+      margin: rem(0 35px);
+      padding: rem(5px);
+    }
+    a {
+      color: #000000;
     }
   }
 }

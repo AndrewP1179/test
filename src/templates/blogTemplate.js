@@ -12,9 +12,9 @@ const Template = ({ data }: PropsType): React.Node => {
     <Layout>
       <div className="blog-post-container">
         <div className="blog-post">
-          <h1>{frontmatter.title}</h1>
-          <h2>{frontmatter.date}</h2>
-          <img src={frontmatter.image.replace('/static', '')} alt="" />
+          <div className="title">{frontmatter.title}</div>
+          <div className="date">Date: {frontmatter.date}</div>
+          <img className="image" src={frontmatter.image.replace('/static', '')} alt="" />
           <div className="blog-post-content" dangerouslySetInnerHTML={{ __html: html }} />
         </div>
       </div>

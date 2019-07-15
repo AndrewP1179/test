@@ -1,0 +1,29 @@
+.blog-post-container {
+  max-width: 80%;
+  margin: 0 auto;
+  padding-bottom: rem(150px);
+  .title {
+    margin-bottom: rem(50px);
+    text-align: center;
+    font-size: rem(50px);
+    @include bold;
+    color: rgb(13, 13, 89);
+  }
+  .date {
+    margin-left: rem(50px);
+    margin-bottom: rem(30px);
+    @include bold;
+  }
+  .image {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    border-radius: 6px;
+  }
+  .blog-post-content {
+    margin: rem(60px 0);
+    font-size: rem(19px);
+    line-height: rem(40px);
+    @include thin;
+  }
+}

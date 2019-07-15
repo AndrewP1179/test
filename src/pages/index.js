@@ -9,9 +9,11 @@ import SpeakersPreview from '../components/speakers/SpeakersPreview';
 import SponsorsPreview from '../components/sponsors/SponsorsPreview';
 import Venue from '../components/venue/Venue';
 
-const HomePage = (): React.Node => (
+type PropsType = { location: Object };
+
+const HomePage = (props: PropsType): React.Node => (
   <div>
-    <Layout>
+    <Layout location={props.location.pathname}>
       <Masthead />
       <AboutPreview />
       <SpeakersPreview />

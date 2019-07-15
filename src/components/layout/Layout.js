@@ -2,11 +2,11 @@
 import * as React from 'react';
 import Navbar from '../header/Navbar';
 import Footer from '../footer/Footer';
-
-const Layout = ({ children }: React.Node): React.Node => (
+type PropsType = { children: React.Node, location: string };
+const Layout = (props: PropsType): React.Node => (
   <div className="layout">
-    <Navbar />
-    {children}
+    <Navbar location={props.location} />
+    {props.children}
     <Footer />
   </div>
 );

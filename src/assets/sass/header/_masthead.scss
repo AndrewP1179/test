@@ -57,6 +57,7 @@
 
   &.blogs-button {
     @include clearfix;
+    margin-top: rem(30px);
     border-color: rgb(13, 13, 89);
     color: rgb(13, 13, 89);
   }
