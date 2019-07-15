@@ -1,6 +1,7 @@
 //@flow
 import * as React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
+import { uniqBy } from 'lodash';
 
 const SpeakersPreview = (): React.Node => (
   <div className="speakers-preview-wrapper">
@@ -20,24 +21,27 @@ const SpeakersPreview = (): React.Node => (
           }
         }
       `}
-      render={(data: Object): React.Node => (
-        <div className="speaker-preview">
-          {data.allMarkdownRemark.edges.map((item: Object): React.Node => (
-            <div
-              className="speaker"
-              key={item.node.frontmatter.speakerName}
-              style={{ backgroundImage: `url(${item.node.frontmatter.speakersImage.replace('/static', '')})` }}
-            >
-              <div className="speaker-card">
-                <div className="info-wrapper">
-                  <div className="title">{item.node.frontmatter.speakerName}</div>
-                  <div className="job">{item.node.frontmatter.speakerJob}</div>
+      render={(data: Object): React.Node => {
+        let filterdData = uniqBy(data.allMarkdownRemark.edges, 'node.frontmatter.speakerName');
+        return (
+          <div className="speaker-preview">
+            {filterdData.map((item: Object): React.Node => (
+              <div
+                className="speaker"
+                key={item.node.frontmatter.speakerName}
+                style={{ backgroundImage: `url(${item.node.frontmatter.speakersImage.replace('/static', '')})` }}
+              >
+                <div className="speaker-card">
+                  <div className="info-wrapper">
+                    <div className="title">{item.node.frontmatter.speakerName}</div>
+                    <div className="job">{item.node.frontmatter.speakerJob}</div>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
-      )}
+            ))}
+          </div>
+        );
+      }}
     />
   </div>
 );

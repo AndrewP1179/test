@@ -7,7 +7,7 @@ const AboutPageTemplate = ({ data }: Object): React.Node => (
   <Layout>
     <div className="about-page">
       <div className="page-title">{data.markdownRemark.frontmatter.title}</div>
-      <div className="page-content">{data.markdownRemark.html}</div>
+      <div className="page-content" dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
     </div>
   </Layout>
 );

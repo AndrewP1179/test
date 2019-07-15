@@ -4,6 +4,10 @@ import { StaticQuery, graphql } from 'gatsby';
 
 const SponsorsPreview = (): React.Node => (
   <div className="sponsors-preview-wrapper">
+    <div className="indexes">
+      <div className="number">04</div>
+      <div className="title">Partners</div>
+    </div>
     <StaticQuery
       query={graphql`
         query SponsorsQuery {
@@ -26,7 +30,6 @@ const SponsorsPreview = (): React.Node => (
           {data.allMarkdownRemark.edges.map((item: Object): Function =>
             item.node.frontmatter.galleryImages.map((image: Object): React.Node => (
               <div className="sponsor" key={image.sponsor}>
-                {console.log(image)}
                 <img src={image.sponsor.replace('/static', '')} alt="" />
               </div>
             )),

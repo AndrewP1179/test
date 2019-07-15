@@ -17,7 +17,7 @@ export default EventsPage;
 
 export const pageQuery = graphql`
   query EventsQuery {
-    allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "SpeakersTemplate" } } }) {
+    allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "speakersTemplate" } } }) {
       edges {
         node {
           frontmatter {

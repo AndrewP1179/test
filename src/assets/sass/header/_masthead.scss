@@ -19,9 +19,7 @@
     margin-top: rem(35px);
     margin-bottom: rem(135px);
     border-color: #52ffff;
-    a {
-      color: #52ffff;
-    }
+    color: #52ffff;
   }
 }
 .button {
@@ -31,6 +29,9 @@
   border: 3px solid;
   padding: rem(13px 30px 14px 30px);
   cursor: pointer;
+  text-decoration: none;
+  @include bold;
+  font-size: rem(15px);
   &:after {
     content: ' ';
     position: absolute;
@@ -53,9 +54,10 @@
       background-color: rgba(0, 0, 0, 0.1);
     }
   }
-  a {
-    text-decoration: none;
-    @include bold;
-    font-size: rem(15px);
+
+  &.blogs-button {
+    @include clearfix;
+    border-color: rgb(13, 13, 89);
+    color: rgb(13, 13, 89);
   }
 }

@@ -1,9 +1,13 @@
 //@flow
 import * as React from 'react';
-import { StaticQuery, graphql } from 'gatsby';
+import { StaticQuery, graphql, Link } from 'gatsby';
 
 const BlogPreview = (): React.Node => (
-  <div className="blogs-preview-wrapper">
+  <div className="blogs-preview-wrapper home-preview">
+    <div className="indexes">
+      <div className="number">05</div>
+      <div className="title">News</div>
+    </div>
     <StaticQuery
       query={graphql`
         query HomePageQuery {
@@ -13,6 +17,7 @@ const BlogPreview = (): React.Node => (
                 frontmatter {
                   title
                   image
+                  path
                 }
               }
             }
@@ -22,14 +27,27 @@ const BlogPreview = (): React.Node => (
       render={(data: Object): React.Node => (
         <div className="blogs-preview">
           {data.allMarkdownRemark.edges.map((item: Object): React.Node => (
-            <div className="blog" key={item.node.frontmatter.title}>
-              <img src={item.node.frontmatter.image.replace('/static', '')} alt="" />
-              <div className="title">{item.node.frontmatter.title}</div>
-            </div>
+            <Link to={item.node.frontmatter.path} key={item.node.frontmatter.title}>
+              <div
+                className="blog"
+                style={{ backgroundImage: `url(${item.node.frontmatter.image.replace('/static', '')})` }}
+              >
+                <div className="blog-card">
+                  <div className="info-wrapper">
+                    <div className="title">{item.node.frontmatter.title}</div>
+                  </div>
+                </div>
+              </div>
+            </Link>
           ))}
         </div>
       )}
     />
+    <div className="button-wrapper">
+      <Link className="button read-more blogs-button" to="/blogs">
+        Show more
+      </Link>
+    </div>
   </div>
 );
 

@@ -1,0 +1,27 @@
+.blogs-preview-wrapper {
+  @include clearfix;
+  text-align: center;
+  &.home-preview {
+    padding-bottom: rem(130px);
+  }
+  .blogs-preview {
+    @include clearfix;
+    margin-top: rem(60px);
+  }
+  .blog {
+    position: relative;
+    width: 33.3333%;
+    float: left;
+    height: 300px;
+    background: {
+      repeat: no-repeat;
+      size: cover;
+      position: center;
+    }
+    &:hover {
+      .blog-card {
+        opacity: 1;
+      }
+    }
+  }
+}

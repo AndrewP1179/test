@@ -21,35 +21,35 @@
         opacity: 1;
       }
     }
-
-    .speaker-card {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #ff005a;
-      opacity: 0;
-      text-align: center;
-      .info-wrapper {
-        width: 100%;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-      }
-      .title,
-      .job {
-        text-transform: uppercase;
-        color: rgb(13, 13, 89);
-      }
-      .title {
-        font-size: rem(45px);
-        @include bold;
-      }
-      .job {
-        margin-top: rem(15px);
-        font-size: rem(28px);
-      }
-    }
+  }
+}
+.blog-card,
+.speaker-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ff005a;
+  opacity: 0;
+  text-align: center;
+  .info-wrapper {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .title,
+  .job {
+    text-transform: uppercase;
+    color: rgb(13, 13, 89);
+  }
+  .title {
+    font-size: rem(30px);
+    @include bold;
+  }
+  .job {
+    margin-top: rem(15px);
+    font-size: rem(13px);
   }
 }

@@ -1,0 +1,15 @@
+.sponsors-preview-wrapper {
+  margin: rem(150px 0 130px 0);
+  text-align: center;
+  .sponsors-preview {
+    margin-top: rem(90px);
+  }
+  .sponsor {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  img {
+    margin: rem(0 30px);
+    width: 150px;
+  }
+}

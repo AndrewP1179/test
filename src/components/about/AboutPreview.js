@@ -24,12 +24,12 @@ const AboutPreview = (): React.Node => (
         <div className="about-preview">
           {data.allMarkdownRemark.edges.map((item: Object): React.Node => (
             <div className="about" key="about-page">
-              <div className="title">{item.node.html.substring(0, 164)}...</div>
+              <div className="title" dangerouslySetInnerHTML={{ __html: `${item.node.html.substring(0, 164)}...` }} />
             </div>
           ))}
-          <div className="button read-more">
-            <Link to="/about">Read more</Link>
-          </div>
+          <Link className="button read-more" to="/about">
+            Read more
+          </Link>
         </div>
       )}
     />

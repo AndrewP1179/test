@@ -1,0 +1,38 @@
+.footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  text-align: center;
+  background-color: #f2f2f2;
+  img {
+    width: 27px;
+  }
+  .social-media {
+    padding-top: rem(30px);
+  }
+  .copyright {
+    padding-top: rem(30px);
+    padding-bottom: rem(30px);
+    color: #a0a09f;
+    font-size: rem(14px);
+    a {
+      font-size: rem(14px);
+      color: #a0a09f;
+      text-decoration: none;
+      transition: all 0.1s ease-in;
+      &:hover {
+        color: rgb(13, 13, 89);
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+html {
+  min-height: 100%;
+}
+body {
+  width: 100%;
+  min-height: 100%;
+  position: absolute;
+}
