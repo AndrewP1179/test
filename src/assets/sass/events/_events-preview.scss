@@ -31,7 +31,7 @@
     span {
       &:after {
         transform: rotate(45deg);
-        left: rem(10px);
+        left: rem(180px);
       }
     }
   }
@@ -39,7 +39,7 @@
     span {
       &:after {
         transform: rotate(-135deg);
-        right: rem(10px);
+        right: rem(180px);
       }
     }
   }
