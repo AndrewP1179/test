@@ -27,12 +27,13 @@ const EventsPreview = (): React.Node => (
         }
       `}
       render={(data: Object): React.Node => (
-        <AliceCarousel mouseDragEnabled dotsDisabled>
+        <AliceCarousel dotsDisabled>
           {data.allMarkdownRemark.edges.map((item: Object): React.Node => (
             <Link to={item.node.frontmatter.path} key={item.node.frontmatter.title}>
               <div className="event">
+                <div className="date">{item.node.frontmatter.time.substring(5, 10)}</div>
                 <div className="time-wrapper">
-                  <div className="time">{item.node.frontmatter.time.substring(5)}</div>
+                  <div className="time">{item.node.frontmatter.time.substring(11)}</div>
                 </div>
                 <div className="event-details">
                   <div className="speaker-name">{item.node.frontmatter.speakerName}:</div>

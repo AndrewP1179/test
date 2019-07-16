@@ -1,5 +1,5 @@
 .events-preview-wrapper {
-  padding: rem(150px 0);
+  padding: rem(150px 0 100px 0);
   text-align: center;
   background-color: #0d0d59;
   .indexes {
@@ -45,9 +45,15 @@
   }
   .event {
     display: inline-block;
-    margin: rem(60px auto 0 auto);
+    width: 90%;
+    margin: rem(0 auto);
+    padding: rem(50px 0);
     div {
       color: #52ffff;
+    }
+    .date {
+      margin-bottom: rem(15px);
+      font-size: rem(40px);
     }
     .time-wrapper,
     .event-details {

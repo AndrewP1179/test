@@ -13,11 +13,16 @@ const EventsTemplate = ({ data }: PropsType): React.Node => {
       <div className="event-post-container">
         <div className="event-post">
           <div className="title">{frontmatter.title}</div>
-          <div className="date">{frontmatter.date}</div>
-          <div className="place">{frontmatter.place}</div>
-          <img src={frontmatter.eventsImage.replace('/static', '')} alt="" />
-          <img src={frontmatter.speakersImage.replace('/static', '')} alt="" />
-          <div className="speaker-name">{frontmatter.speakerName}</div>
+          <div className="date-wrapper">
+            <div className="time">{frontmatter.time}</div>
+            <div className="place">{frontmatter.place}</div>
+          </div>
+          <img className="image" src={frontmatter.eventsImage.replace('/static', '')} alt="" />
+          <div className="speaker">
+            <img src={frontmatter.speakersImage.replace('/static', '')} alt="" />
+            <div className="speaker-name">{frontmatter.speakerName}</div>
+            <div className="speaker-job">{frontmatter.speakerJob}</div>
+          </div>
           <div className="blog-post-content" dangerouslySetInnerHTML={{ __html: html }} />
         </div>
       </div>
@@ -34,9 +39,10 @@ export const events = graphql`
         title
         eventsImage
         speakersImage
-        date
+        time
         place
         speakerName
+        speakerJob
       }
     }
   }
