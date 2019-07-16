@@ -34,6 +34,7 @@
 
 .about-page {
   max-width: 80%;
+  padding-top: rem(215px);
   margin: 0 auto;
   .page-title {
     margin-bottom: rem(30px);
@@ -45,5 +46,6 @@
     font-size: rem(16px);
     @include thin;
     line-height: rem(40px);
+    padding-bottom: rem(60px);
   }
 }
