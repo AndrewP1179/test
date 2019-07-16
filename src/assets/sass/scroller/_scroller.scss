@@ -1,0 +1,50 @@
+.scroller {
+  position: fixed;
+  right: rem(50px);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  .active {
+    .title {
+      opacity: 1 !important;
+      transform: translateX(0) !important;
+    }
+    .dot {
+      background-color: #52ffff;
+    }
+  }
+
+  .wrapper {
+    @include clearfix;
+    margin-top: rem(20px);
+    .dot,
+    .title {
+      float: right;
+    }
+    .title {
+      margin-top: rem(-5px);
+      margin-right: rem(15px);
+      opacity: 0;
+      transition: all 0.1s ease-in;
+      transform: translateX(20px);
+      position: relative;
+      z-index: -1;
+      color: #52ffff;
+    }
+  }
+  .dot {
+    width: 8px;
+    height: 8px;
+    border: 2px solid #52ffff;
+    border-radius: 50%;
+    transition: all 0.1s ease-in;
+    cursor: pointer;
+    &:hover {
+      background-color: #52ffff;
+      + .title {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  }
+}

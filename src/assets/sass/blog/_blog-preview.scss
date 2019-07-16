@@ -1,4 +1,6 @@
 .blogs-preview-wrapper {
+  padding-top: rem(75px);
+
   @include clearfix;
   text-align: center;
   &.home-preview {

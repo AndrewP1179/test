@@ -1,6 +1,10 @@
 //@flow
 import React from 'react';
+/*eslint-disable */
+import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
+/*eslint-enable */
 import Layout from '../components/layout/Layout';
+import Scroller from '../components/layout/Scroller';
 import Masthead from '../components/header/Masthead';
 import AboutPreview from '../components/about/AboutPreview';
 import BlogPreview from '../components/blog/BlogPreview';
@@ -13,14 +17,30 @@ type PropsType = { location: Object };
 
 const HomePage = (props: PropsType): React.Node => (
   <div>
+    <Scroller />
+
     <Layout location={props.location.pathname}>
-      <Masthead />
-      <AboutPreview />
-      <SpeakersPreview />
-      <EventsPreview />
-      <SponsorsPreview />
-      <Venue />
-      <BlogPreview />
+      <Element name="home">
+        <Masthead />
+      </Element>
+      <Element name="about">
+        <AboutPreview />
+      </Element>
+      <Element name="speakers">
+        <SpeakersPreview />
+      </Element>
+      <Element name="events">
+        <EventsPreview />
+      </Element>
+      <Element name="sponsors">
+        <SponsorsPreview />
+      </Element>
+      <Element name="venue">
+        <Venue />
+      </Element>
+      <Element name="blog">
+        <BlogPreview />
+      </Element>
     </Layout>
   </div>
 );

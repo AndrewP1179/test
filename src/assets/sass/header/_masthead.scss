@@ -1,4 +1,19 @@
 .masthead-wrapper {
+  background : {
+    image: url('/assets/cover.jpg');
+    size: cover;
+    position: center;
+  }
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+  }
   .title {
     margin-top: rem(205px);
     text-transform: uppercase;
@@ -10,10 +25,13 @@
   .masthead {
     display: table;
     margin: 0 auto;
+    position: relative;
+    z-index: 5;
   }
   .date {
     margin-top: rem(140px);
     font-size: rem(21px);
+    color: #ffffff;
   }
   .buy-ticket {
     margin-top: rem(35px);

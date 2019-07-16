@@ -31,7 +31,7 @@ const EventsPreview = (): React.Node => (
           {data.allMarkdownRemark.edges.map((item: Object): React.Node => (
             <Link to={item.node.frontmatter.path} key={item.node.frontmatter.title}>
               <div className="event">
-                <div className="date">{item.node.frontmatter.time.substring(5, 10)}</div>
+                <div className="date">{item.node.frontmatter.time.substring(0, 5)}</div>
                 <div className="time-wrapper">
                   <div className="time">{item.node.frontmatter.time.substring(11)}</div>
                 </div>

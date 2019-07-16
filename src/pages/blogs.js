@@ -5,7 +5,7 @@ import Layout from '../components/layout/Layout';
 
 const BlogPage = ({ data }: Object): React.Node => (
   <Layout>
-    <div className="blogs-preview-wrapper">
+    <div className="blogs-preview-wrapper blogs-page-wrapper">
       <div className="blogs-preview">
         {data.allMarkdownRemark.edges.map((item: Object): React.Node => (
           <Link to={item.node.frontmatter.path} key={item.node.frontmatter.title}>

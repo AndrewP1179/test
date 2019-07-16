@@ -28,3 +28,7 @@
     @include thin;
   }
 }
+.blogs-page-wrapper {
+  padding-top: 0;
+  padding-bottom: rem(210px);
+}

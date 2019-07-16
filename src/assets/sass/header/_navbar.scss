@@ -1,6 +1,10 @@
 .navbar {
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  width: 100%;
   .nav-list {
-    margin: rem(95px);
+    padding: rem(95px);
     text-align: center;
     li,
     a {
@@ -9,7 +13,7 @@
       text-decoration: none;
       cursor: pointer;
       transition: all 0.2s ease-in;
-
+      color: #ffffff;
       &:hover {
         color: #52ffff;
       }

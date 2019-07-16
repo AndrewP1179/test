@@ -1,8 +1,44 @@
 .event-post-container {
+  .content-wrapper {
+    margin-bottom: rem(60px);
+  }
   .date-wrapper {
     .time,
     .place {
-      display: inline-block;
+      font-size: rem(25px);
+      @include bold;
+
+      color: rgb(13, 13, 89);
+      .question {
+        font-size: rem(45px);
+        @include bold;
+        margin-right: rem(15px);
+        color: #52ffff;
+      }
+    }
+    .time {
+      margin-bottom: rem(25px);
+    }
+  }
+  .date-wrapper,
+  .speaker {
+    display: inline-block;
+    width: 50%;
+    vertical-align: middle;
+  }
+  .speaker {
+    text-align: center;
+    img {
+      width: 250px;
+      border-radius: 50%;
+    }
+    .speaker-name {
+      margin: rem(15px 0 10px 0);
+      color: rgb(13, 13, 89);
+      @include bold;
+    }
+    .speaker-job {
+      @include thin;
     }
   }
 }

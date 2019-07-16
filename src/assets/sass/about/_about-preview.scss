@@ -31,3 +31,19 @@
   border-color: #fff;
   color: #fff;
 }
+
+.about-page {
+  max-width: 80%;
+  margin: 0 auto;
+  .page-title {
+    margin-bottom: rem(30px);
+    font-size: rem(46px);
+    @include bold;
+    color: #52ffff;
+  }
+  .page-content {
+    font-size: rem(16px);
+    @include thin;
+    line-height: rem(40px);
+  }
+}
