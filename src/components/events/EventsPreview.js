@@ -1,6 +1,7 @@
 //@flow
 import * as React from 'react';
-import { StaticQuery, graphql } from 'gatsby';
+import { StaticQuery, graphql, Link } from 'gatsby';
+import AliceCarousel from 'react-alice-carousel';
 
 const EventsPreview = (): React.Node => (
   <div className="events-preview-wrapper">
@@ -15,9 +16,9 @@ const EventsPreview = (): React.Node => (
             edges {
               node {
                 frontmatter {
+                  path
                   title
                   time
-                  place
                   speakerName
                 }
               }
@@ -26,15 +27,21 @@ const EventsPreview = (): React.Node => (
         }
       `}
       render={(data: Object): React.Node => (
-        <div className="event-preview">
+        <AliceCarousel mouseDragEnabled dotsDisabled>
           {data.allMarkdownRemark.edges.map((item: Object): React.Node => (
-            <div className="event" key={item.node.frontmatter.title}>
-              <div className="title">{item.node.frontmatter.title}</div>
-              <div className="time">{item.node.frontmatter.time}</div>
-              <div className="speaker-name">{item.node.frontmatter.speakerName}</div>
-            </div>
+            <Link to={item.node.frontmatter.path} key={item.node.frontmatter.title}>
+              <div className="event">
+                <div className="time-wrapper">
+                  <div className="time">{item.node.frontmatter.time.substring(5)}</div>
+                </div>
+                <div className="event-details">
+                  <div className="speaker-name">{item.node.frontmatter.speakerName}:</div>
+                  <div className="title">{item.node.frontmatter.title}</div>
+                </div>
+              </div>
+            </Link>
           ))}
-        </div>
+        </AliceCarousel>
       )}
     />
   </div>

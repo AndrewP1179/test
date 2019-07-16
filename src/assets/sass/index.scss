@@ -1,8 +1,11 @@
+@import 'react-alice-carousel/lib/scss/alice-carousel.scss';
+
 @import 'helpers/fonts';
 @import 'helpers/reset';
 @import 'helpers/variables';
 @import 'helpers/mixins';
 @import 'helpers/mq';
+@import 'helpers/carousel';
 
 @import 'header/navbar';
 @import 'header/masthead';
@@ -19,3 +22,5 @@
 @import 'footer/footer';
 
 @import 'venue/venue';
+
+@import 'events/events-preview';
