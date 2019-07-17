@@ -3,7 +3,7 @@ templateKey: eventsTemplate
 title: Closing Remarks
 eventsImage: /static/assets/20935062_1123341784434371_8686167862893783118_o.jpg
 path: /events/closing
-time: '07-08-2019 02:00'
+time: 'January 24th 2000, 12:00 am'
 place: Digital Park
 speakerName: Andrei Popovici
 speakerJob: Developer
