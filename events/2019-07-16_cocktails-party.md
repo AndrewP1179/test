@@ -3,7 +3,7 @@ templateKey: eventsTemplate
 title: Cocktails & Party!
 eventsImage: /static/assets/31753198_1508246262637078_3789412420779245568_o.jpg
 path: /events/party
-time: '03-07-2019 05:00'
+time: 'January 30th 2000, 12:00 am'
 place: Generator Hub
 speakerName: Nagailic Sergiu
 speakerJob: Founder
