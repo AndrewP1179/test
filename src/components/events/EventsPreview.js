@@ -31,9 +31,14 @@ const EventsPreview = (): React.Node => (
           {data.allMarkdownRemark.edges.map((item: Object): React.Node => (
             <Link to={item.node.frontmatter.path} key={item.node.frontmatter.title}>
               <div className="event">
-                <div className="date">{item.node.frontmatter.time.substring(0, 5)}</div>
+                {console.log(item.node.frontmatter.time)}
+                <div className="date">
+                  {item.node.frontmatter.time.substring(0, item.node.frontmatter.time.indexOf('th'))}
+                </div>
                 <div className="time-wrapper">
-                  <div className="time">{item.node.frontmatter.time.substring(11)}</div>
+                  <div className="time">
+                    {item.node.frontmatter.time.substring(item.node.frontmatter.time.indexOf(','))}
+                  </div>
                 </div>
                 <div className="event-details">
                   <div className="speaker-name">{item.node.frontmatter.speakerName}:</div>

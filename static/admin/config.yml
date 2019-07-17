@@ -39,7 +39,7 @@ collections:
       - { name: 'title', label: 'Title' }
       - { name: 'eventsImage', label: "Event's Image", widget: 'image' }
       - { name: 'path', label: 'Path', default: '/events/' }
-      - { name: 'time', label: 'Time', widget: 'datetime', format: 'MMMM Do YYYY, h:mm a' }
+      - { name: 'time', label: 'Time', widget: 'datetime', format: 'LLL' }
       - { name: 'place', label: 'Place' }
       - { name: 'speakerName', label: "Speaker's Name" }
       - { name: 'speakerJob', label: "Speaker's Job" }
