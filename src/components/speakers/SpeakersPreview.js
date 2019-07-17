@@ -1,6 +1,6 @@
 //@flow
 import * as React from 'react';
-import { StaticQuery, graphql } from 'gatsby';
+import { StaticQuery, graphql, Link } from 'gatsby';
 import { uniqBy } from 'lodash';
 
 const SpeakersPreview = (): React.Node => (
@@ -8,7 +8,7 @@ const SpeakersPreview = (): React.Node => (
     <StaticQuery
       query={graphql`
         query ShowSpeakersQuery {
-          allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "eventsTemplate" } } }) {
+          allMarkdownRemark(limit: 4, filter: { frontmatter: { templateKey: { eq: "eventsTemplate" } } }) {
             edges {
               node {
                 frontmatter {
@@ -43,6 +43,9 @@ const SpeakersPreview = (): React.Node => (
         );
       }}
     />
+    <Link className="button read-more speaker-btn" to="/speakers">
+      Show more
+    </Link>
   </div>
 );
 

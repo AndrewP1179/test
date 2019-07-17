@@ -30,6 +30,9 @@
   margin-bottom: rem(60px);
   border-color: #fff;
   color: #fff;
+  &.speaker-btn {
+    margin: rem(30px 0);
+  }
 }
 
 .about-page {

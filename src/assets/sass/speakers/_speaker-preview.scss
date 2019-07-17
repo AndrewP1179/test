@@ -1,10 +1,11 @@
 .speakers-preview-wrapper {
   @include clearfix;
+  background-color: #ff005a;
+  text-align: center;
   .speaker-preview {
     @include clearfix;
     height: 500px;
   }
-
   .speaker {
     position: relative;
     width: 25%;
@@ -52,5 +53,13 @@
   .job {
     margin-top: rem(15px);
     font-size: rem(13px);
+  }
+}
+.speakers-pages {
+  margin-top: rem(220px);
+  margin-bottom: rem(250px);
+  background-color: #fff;
+  .speaker {
+    height: 400px;
   }
 }
