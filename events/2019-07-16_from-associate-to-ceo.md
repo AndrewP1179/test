@@ -3,7 +3,7 @@ templateKey: eventsTemplate
 title: From Associate to CEO
 eventsImage: /static/assets/26232636_1392162604245445_6888579497799133825_o.jpg
 path: /events/ceo
-time: 'July 21st 2019, 12:00 am'
+time: 'July 30, 2012 12:00 AM'
 place: Ihub
 speakerName: Vladimir Melnic
 speakerJob: Developer
