@@ -12,20 +12,7 @@
     color: #ffffff;
   }
 }
-.indexes {
-  .number,
-  .title {
-    letter-spacing: 2px;
-    @include bold;
-    font-size: rem(16px);
-    text-transform: uppercase;
-    color: rgb(13, 13, 89);
-  }
 
-  .title {
-    margin-top: rem(20px);
-  }
-}
 .read-more {
   margin-bottom: rem(60px);
   border-color: #fff;
@@ -50,5 +37,20 @@
     @include thin;
     line-height: rem(40px);
     padding-bottom: rem(60px);
+  }
+}
+
+.indexes {
+  .number,
+  .title {
+    letter-spacing: 2px;
+    @include bold;
+    font-size: rem(16px);
+    text-transform: uppercase;
+    color: rgb(13, 13, 89);
+  }
+
+  .title {
+    margin-top: rem(20px);
   }
 }

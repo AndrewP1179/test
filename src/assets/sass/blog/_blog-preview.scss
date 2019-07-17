@@ -3,6 +3,7 @@
   @include clearfix;
   text-align: center;
   &.home-preview {
+    padding-top: rem(215px);
     padding-bottom: rem(130px);
   }
   .blogs-preview {

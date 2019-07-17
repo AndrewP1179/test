@@ -5,7 +5,7 @@ import { StaticQuery, graphql, Link } from 'gatsby';
 const BlogPreview = (): React.Node => (
   <div className="blogs-preview-wrapper home-preview">
     <div className="indexes">
-      <div className="number">05</div>
+      <div className="number">06</div>
       <div className="title">News</div>
     </div>
     <StaticQuery

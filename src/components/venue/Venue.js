@@ -6,6 +6,10 @@ type PropsType = { google: Object };
 
 const Venue = (props: PropsType): React.Node => (
   <div className="venue-block">
+    <div className="indexes">
+      <div className="number">05</div>
+      <div className="title">Location</div>
+    </div>
     <Map
       google={props.google}
       initialCenter={{

@@ -28,25 +28,29 @@ const EventsPreview = (): React.Node => (
       `}
       render={(data: Object): React.Node => (
         <AliceCarousel dotsDisabled>
-          {data.allMarkdownRemark.edges.map((item: Object): React.Node => (
-            <Link to={item.node.frontmatter.path} key={item.node.frontmatter.title}>
-              <div className="event">
-                {console.log(item.node.frontmatter.time)}
-                <div className="date">
-                  {item.node.frontmatter.time.substring(0, item.node.frontmatter.time.indexOf('th'))}
-                </div>
-                <div className="time-wrapper">
-                  <div className="time">
-                    {item.node.frontmatter.time.substring(item.node.frontmatter.time.indexOf(','))}
+          {data.allMarkdownRemark.edges.map((item: Object): React.Node => {
+            const pos1 = item.node.frontmatter.time.indexOf(' ');
+            const pos2 = item.node.frontmatter.time.indexOf(' ', pos1 + 1);
+            const pos3 = item.node.frontmatter.time.indexOf(' ', pos2 + 1);
+            console.log(pos3);
+            return (
+              <Link to={item.node.frontmatter.path} key={item.node.frontmatter.title}>
+                <div className="event">
+                  {console.log(item.node.frontmatter.time)}
+                  <div className="date">
+                    {item.node.frontmatter.time.substring(0, item.node.frontmatter.time.indexOf(','))}
+                  </div>
+                  <div className="time-wrapper">
+                    <div className="time">{item.node.frontmatter.time.substring(pos3)}</div>
+                  </div>
+                  <div className="event-details">
+                    <div className="speaker-name">{item.node.frontmatter.speakerName}:</div>
+                    <div className="title">{item.node.frontmatter.title}</div>
                   </div>
                 </div>
-                <div className="event-details">
-                  <div className="speaker-name">{item.node.frontmatter.speakerName}:</div>
-                  <div className="title">{item.node.frontmatter.title}</div>
-                </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            );
+          })}
         </AliceCarousel>
       )}
     />
