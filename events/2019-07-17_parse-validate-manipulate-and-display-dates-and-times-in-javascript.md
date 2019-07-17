@@ -1,6 +1,6 @@
 ---
 templateKey: eventsTemplate
-title: 'Parse, validate, manipulate, and display dates and times in JavaScript'
+title: 'Parse, validate, manipulate, and display dates and times in JS'
 eventsImage: /static/assets/20935062_1123341784434371_8686167862893783118_o.jpg
 path: /events/ghj
 time: 'June 26, 0001 12:00 AM'
