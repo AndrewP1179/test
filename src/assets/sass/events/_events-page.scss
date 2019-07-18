@@ -43,3 +43,34 @@
     }
   }
 }
+
+.events-preview {
+  padding: rem(215px 60px 220px 60px);
+  .events-wrapper {
+    border-bottom: 1px dashed rgb(13, 13, 89);
+    .event-date,
+    .event {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .event-date {
+      width: 160px;
+      @include bold;
+      color: rgb(13, 13, 89);
+    }
+    .event {
+      padding: rem(30px 40px 30px 40px);
+      .title {
+        margin-bottom: rem(15px);
+        color: rgb(13, 13, 89);
+        @include bold;
+        font-size: rem(18px);
+      }
+      .button {
+        margin-top: rem(15px);
+        border-color: rgb(13, 13, 89);
+        color: rgb(13, 13, 89);
+      }
+    }
+  }
+}

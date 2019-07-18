@@ -8,69 +8,10 @@
       color: #52ffff;
     }
   }
-  .alice-carousel__prev-btn,
-  .alice-carousel__next-btn {
-    display: inline-block;
-    width: initial;
-    span {
-      &:after {
-        position: relative;
-        z-index: 5;
-        content: '';
-        border-bottom: 3px solid;
-        border-left: 3px solid;
-        width: 30px;
-        height: 30px;
-        border-color: #52ffff;
-        position: absolute;
-        top: 50%;
-      }
-    }
-  }
-  .alice-carousel__prev-btn {
-    span {
-      &:after {
-        transform: rotate(45deg);
-        left: rem(180px);
-      }
-    }
-  }
-  .alice-carousel__next-btn {
-    span {
-      &:after {
-        transform: rotate(-135deg);
-        right: rem(180px);
-      }
-    }
-  }
-  .event {
-    display: inline-block;
-    width: 90%;
-    margin: rem(0 auto);
-    padding: rem(50px 0);
-    div {
-      color: #52ffff;
-    }
-    .date {
-      margin-bottom: rem(15px);
-      font-size: rem(40px);
-    }
-    .time-wrapper,
-    .event-details {
-      display: inline-block;
-      vertical-align: middle;
-    }
-    .time-wrapper {
-      .time {
-        font-size: rem(55px);
-      }
-    }
-    .event-details {
-      margin-left: rem(15px);
-      text-align: left;
-      > div {
-        font-size: rem(16px);
-      }
-    }
+
+  .agenda-btn {
+    margin-top: rem(60px);
+    color: #52ffff;
+    border-color: #52ffff;
   }
 }

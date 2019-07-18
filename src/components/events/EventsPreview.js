@@ -1,7 +1,6 @@
 //@flow
 import * as React from 'react';
-import { StaticQuery, graphql, Link } from 'gatsby';
-import AliceCarousel from 'react-alice-carousel';
+import { Link } from 'gatsby';
 
 const EventsPreview = (): React.Node => (
   <div className="events-preview-wrapper">
@@ -9,51 +8,9 @@ const EventsPreview = (): React.Node => (
       <div className="number">03</div>
       <div className="title">Agenda</div>
     </div>
-    <StaticQuery
-      query={graphql`
-        query ShowEventsQuery {
-          allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "eventsTemplate" } } }) {
-            edges {
-              node {
-                frontmatter {
-                  path
-                  title
-                  time
-                  speakerName
-                }
-              }
-            }
-          }
-        }
-      `}
-      render={(data: Object): React.Node => (
-        <AliceCarousel dotsDisabled>
-          {data.allMarkdownRemark.edges.map((item: Object): React.Node => {
-            const pos1 = item.node.frontmatter.time.indexOf(' ');
-            const pos2 = item.node.frontmatter.time.indexOf(' ', pos1 + 1);
-            const pos3 = item.node.frontmatter.time.indexOf(' ', pos2 + 1);
-            console.log(pos3);
-            return (
-              <Link to={item.node.frontmatter.path} key={item.node.frontmatter.title}>
-                <div className="event">
-                  {console.log(item.node.frontmatter.time)}
-                  <div className="date">
-                    {item.node.frontmatter.time.substring(0, item.node.frontmatter.time.indexOf(','))}
-                  </div>
-                  <div className="time-wrapper">
-                    <div className="time">{item.node.frontmatter.time.substring(pos3)}</div>
-                  </div>
-                  <div className="event-details">
-                    <div className="speaker-name">{item.node.frontmatter.speakerName}:</div>
-                    <div className="title">{item.node.frontmatter.title}</div>
-                  </div>
-                </div>
-              </Link>
-            );
-          })}
-        </AliceCarousel>
-      )}
-    />
+    <Link to="/events">
+      <div className="button agenda-btn">View Agenda</div>
+    </Link>
   </div>
 );
 

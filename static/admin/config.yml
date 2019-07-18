@@ -43,6 +43,7 @@ collections:
       - { name: 'place', label: 'Place' }
       - { name: 'speakerName', label: "Speaker's Name" }
       - { name: 'speakerJob', label: "Speaker's Job" }
+      - { name: 'speakerInfo', label: "Speaker's description" }
       - { name: 'speakersImage', label: "Speaker's Image", widget: 'image' }
       - { name: 'body', label: 'Description', widget: 'markdown' }
   - label: 'sponsors'
