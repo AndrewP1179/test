@@ -3,7 +3,7 @@
   right: rem(50px);
   top: 50%;
   transform: translateY(-50%);
-  z-index: 10;
+  z-index: 5;
   .active {
     .title {
       opacity: 1 !important;
@@ -13,7 +13,6 @@
       background-color: #52ffff;
     }
   }
-
   .wrapper {
     @include clearfix;
     margin-top: rem(20px);

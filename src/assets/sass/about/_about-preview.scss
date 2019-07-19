@@ -6,9 +6,15 @@
   .title {
     margin-top: rem(115px);
     margin-bottom: rem(55px);
-    padding: rem(0 350px);
-    font-size: rem(40px);
+    padding: rem(0 150px);
     line-height: 1.4;
+    //Responsive
+    @include mq($until: desktop) {
+      padding: rem(0 100px);
+    }
+    @include mq($until: tablet) {
+      padding: rem(0 30px);
+    }
     color: #ffffff;
   }
 }

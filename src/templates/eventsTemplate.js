@@ -6,6 +6,7 @@ import Layout from '../components/layout/Layout';
 type PropsType = { data: string };
 
 const EventsTemplate = ({ data }: PropsType): React.Node => {
+  console.log(data);
   const { markdownRemark } = data;
   const { frontmatter, html } = markdownRemark;
   return (
@@ -18,7 +19,7 @@ const EventsTemplate = ({ data }: PropsType): React.Node => {
           <div className="blog-post-content" dangerouslySetInnerHTML={{ __html: html }} />
           <div className="content-wrapper">
             <div className="speaker">
-              <img src={frontmatter.speakersImage.replace('/static', '')} alt="" />
+              <img src={frontmatter.speakersImage.replace('/static', '')} />
               <div className="speaker-name">{frontmatter.speakerName}</div>
               <div className="speaker-job">{frontmatter.speakerJob}</div>
             </div>
@@ -53,6 +54,7 @@ export const events = graphql`
         place
         speakerName
         speakerJob
+        relation
       }
     }
   }

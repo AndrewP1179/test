@@ -1,6 +1,7 @@
 //@flow
 import * as React from 'react';
 import { StaticQuery, graphql, Link } from 'gatsby';
+import FitText from '@kennethormandy/react-fittext';
 
 const AboutPreview = (): React.Node => (
   <div className="about-preview-wrapper">
@@ -24,7 +25,9 @@ const AboutPreview = (): React.Node => (
         <div className="about-preview">
           {data.allMarkdownRemark.edges.map((item: Object): React.Node => (
             <div className="about" key="about-page">
-              <div className="title" dangerouslySetInnerHTML={{ __html: `${item.node.html.substring(0, 164)}...` }} />
+              <FitText minFontSize={16} maxFontSize={40} compressor={2.5}>
+                <div className="title" dangerouslySetInnerHTML={{ __html: `${item.node.html.substring(0, 164)}...` }} />
+              </FitText>
             </div>
           ))}
           <Link className="button read-more" to="/about">

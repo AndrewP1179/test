@@ -15,19 +15,18 @@
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
   }
   .title {
-    margin-top: rem(285px);
+    padding-top: rem(285px);
     text-transform: uppercase;
-    font-size: rem(125px);
     color: #52ffff;
     @include bold;
     text-align: center;
   }
   .masthead {
-    display: table;
     margin: 0 auto;
     position: relative;
-    z-index: 5;
+    z-index: 1;
   }
+
   .date {
     margin-top: rem(140px);
     font-size: rem(21px);
@@ -38,6 +37,9 @@
     margin-bottom: rem(135px);
     border-color: #52ffff;
     color: #52ffff;
+  }
+  .masthead-info {
+    text-align: center;
   }
 }
 .button {

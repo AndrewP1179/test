@@ -22,6 +22,7 @@ const SpeakersPreview = (): React.Node => (
         }
       `}
       render={(data: Object): React.Node => {
+        console.log(data);
         let filterdData = uniqBy(data.allMarkdownRemark.edges, 'node.frontmatter.speakerName');
         return (
           <div className="speaker-preview">

@@ -46,6 +46,15 @@ collections:
       - { name: 'speakerInfo', label: "Speaker's description" }
       - { name: 'speakersImage', label: "Speaker's Image", widget: 'image' }
       - { name: 'body', label: 'Description', widget: 'markdown' }
+      - {
+          name: 'relation',
+          label: 'relation',
+          widget: 'relation',
+          collection: 'blog',
+          searchFields: ['title', 'date'],
+          valueField: 'date',
+          displayFields: ['title', 'date'],
+        }
   - label: 'sponsors'
     name: 'sponsors'
     folder: 'sponsorsImages'
