@@ -37,4 +37,3 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     });
   });
 };
- 

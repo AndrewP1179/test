@@ -40,8 +40,4 @@ module.exports = {
     `gatsby-plugin-eslint`,
     `gatsby-plugin-netlify-cms`,
   ],
-  mapping: {
-    'MarkdownRemark.fields.author': 'MarkdownRemark',
-    'MarkdownRemark.fields.title': 'MarkdownRemark',
-  },
 };

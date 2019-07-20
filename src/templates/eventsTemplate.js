@@ -1,6 +1,8 @@
 //@flow
 import React from 'react';
 import { graphql } from 'gatsby';
+import { compose, withHandlers, lifecycle } from 'recompose';
+import axios from 'axios';
 import Layout from '../components/layout/Layout';
 
 type PropsType = { data: string };
@@ -19,9 +21,9 @@ const EventsTemplate = ({ data }: PropsType): React.Node => {
           <div className="blog-post-content" dangerouslySetInnerHTML={{ __html: html }} />
           <div className="content-wrapper">
             <div className="speaker">
-              <img src={frontmatter.speakersImage.replace('/static', '')} />
+              {/* <img src={frontmatter.speakersImage.replace('/static', '')} />
               <div className="speaker-name">{frontmatter.speakerName}</div>
-              <div className="speaker-job">{frontmatter.speakerJob}</div>
+              <div className="speaker-job">{frontmatter.speakerJob}</div> */}
             </div>
 
             <div className="date-wrapper">
@@ -40,7 +42,44 @@ const EventsTemplate = ({ data }: PropsType): React.Node => {
     </Layout>
   );
 };
-export default EventsTemplate;
+
+const enhance = compose(
+  withHandlers({
+    onRequest: (props: PropsType): Function => () => {
+      axios({
+        url: `${props.location.origin}/___graphql`,
+        method: 'post',
+        data: {
+          query: `
+            query speakersQuery($title: String) {
+              markdownRemark(frontmatter: { title: { eq: $title } }) {
+                html
+                frontmatter {
+                  title
+                  speakersJob
+                  speakersImage
+                   
+                }
+              }
+            }
+          `,
+          variables: {
+            title: props.data.markdownRemark.frontmatter.relation,
+          },
+        },
+      }).then((result: Object) => {
+        console.log(result.data);
+      });
+    },
+  }),
+  lifecycle({
+    componentDidMount() {
+      this.props.onRequest();
+    },
+  }),
+);
+
+export default enhance(EventsTemplate);
 
 export const events = graphql`
   query events($path: String!) {
@@ -49,11 +88,8 @@ export const events = graphql`
       frontmatter {
         title
         eventsImage
-        speakersImage
         time
         place
-        speakerName
-        speakerJob
         relation
       }
     }
