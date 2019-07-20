@@ -5,6 +5,17 @@ backend:
 media_folder: static/assets
 
 collections:
+  - name: 'speakers'
+    label: 'Speaker'
+    folder: 'speakers'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}_{{slug}}'
+    fields:
+      - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'speakersTemplate' }
+      - { name: 'title', label: "Speaker's Name" }
+      - { name: 'speakersJob', label: "Speaker's Job" }
+      - { name: 'speakersImage', label: "Speaker's Image", widget: 'image' }
+      - { name: 'speakersDescription', label: "Speaker's Description", widget: 'markdown' }
   - name: 'blog'
     label: 'Blog'
     folder: 'blog'
@@ -41,19 +52,15 @@ collections:
       - { name: 'path', label: 'Path', default: '/events/' }
       - { name: 'time', label: 'Time', widget: 'datetime', format: 'LLL' }
       - { name: 'place', label: 'Place' }
-      - { name: 'speakerName', label: "Speaker's Name" }
-      - { name: 'speakerJob', label: "Speaker's Job" }
-      - { name: 'speakerInfo', label: "Speaker's description" }
-      - { name: 'speakersImage', label: "Speaker's Image", widget: 'image' }
       - { name: 'body', label: 'Description', widget: 'markdown' }
       - {
           name: 'relation',
           label: 'relation',
           widget: 'relation',
-          collection: 'blog',
-          searchFields: ['title', 'date'],
-          valueField: 'date',
-          displayFields: ['title', 'date'],
+          collection: 'speakers',
+          searchFields: 'title',
+          valueField: 'title',
+          displayFields: ['title', 'speakersJob'],
         }
   - label: 'sponsors'
     name: 'sponsors'
