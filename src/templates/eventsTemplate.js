@@ -1,39 +1,41 @@
 //@flow
 import React from 'react';
 import { graphql } from 'gatsby';
-import { compose, withHandlers, lifecycle } from 'recompose';
+import { compose, withHandlers, lifecycle, withStateHandlers } from 'recompose';
 import axios from 'axios';
 import Layout from '../components/layout/Layout';
 
-type PropsType = { data: string };
+type PropsType = { data: string, speakerData: Object };
 
-const EventsTemplate = ({ data }: PropsType): React.Node => {
-  console.log(data);
-  const { markdownRemark } = data;
-  const { frontmatter, html } = markdownRemark;
+const EventsTemplate = (props: PropsType): React.Node => {
+  console.log(props);
   return (
     <Layout>
       <div className="event-post-container">
         <div className="event-post">
-          <div className="title">{frontmatter.title}</div>
+          <div className="title">{props.data.markdownRemark.frontmatter.title}</div>
 
-          <img className="image" src={frontmatter.eventsImage.replace('/static', '')} alt="" />
-          <div className="blog-post-content" dangerouslySetInnerHTML={{ __html: html }} />
+          <img
+            className="image"
+            src={props.data.markdownRemark.frontmatter.eventsImage.replace('/static', '')}
+            alt=""
+          />
+          <div className="blog-post-content" dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }} />
           <div className="content-wrapper">
             <div className="speaker">
-              {/* <img src={frontmatter.speakersImage.replace('/static', '')} />
-              <div className="speaker-name">{frontmatter.speakerName}</div>
-              <div className="speaker-job">{frontmatter.speakerJob}</div> */}
+              <img src={props.speakerData.speakersImage && props.speakerData.speakersImage.replace('/static', '')} />
+              <div className="speaker-name">{props.speakerData.speakerName}</div>
+              <div className="speaker-job">{props.speakerData.speakerJob}</div>
             </div>
 
             <div className="date-wrapper">
               <div className="time">
                 <span className="question">When? </span>
-                {frontmatter.time.replace(' ', ', ')}
+                {props.data.markdownRemark.frontmatter.time.replace(' ', ', ')}
               </div>
               <div className="place">
                 <span className="question">Where? </span>
-                {frontmatter.place}
+                {props.data.markdownRemark.frontmatter.place}
               </div>
             </div>
           </div>
@@ -44,6 +46,10 @@ const EventsTemplate = ({ data }: PropsType): React.Node => {
 };
 
 const enhance = compose(
+  /* eslint-disable */
+  withStateHandlers({ speakerData: {} }, { setState: () => newState => newState }),
+  /* eslint-enable */
+
   withHandlers({
     onRequest: (props: PropsType): Function => () => {
       axios({
@@ -53,12 +59,10 @@ const enhance = compose(
           query: `
             query speakersQuery($title: String) {
               markdownRemark(frontmatter: { title: { eq: $title } }) {
-                html
                 frontmatter {
                   title
-                  speakersJob
+                  speakersJob 
                   speakersImage
-                   
                 }
               }
             }
@@ -68,7 +72,7 @@ const enhance = compose(
           },
         },
       }).then((result: Object) => {
-        console.log(result.data);
+        props.setState({ speakerData: result.data.data.markdownRemark.frontmatter });
       });
     },
   }),

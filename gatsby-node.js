@@ -27,13 +27,14 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     }
 
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-      if (node.frontmatter.templateKey !== 'sponsor') {
+      if (node.frontmatter.templateKey !== 'sponsor' && node.frontmatter.templateKey !== 'speakersTemplate') {
         createPage({
           path: node.frontmatter.path,
           component: path.resolve(`src/templates/${node.frontmatter.templateKey}.js`),
           context: {},
         });
       }
+      return false;
     });
   });
 };

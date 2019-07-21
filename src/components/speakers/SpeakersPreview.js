@@ -1,20 +1,20 @@
 //@flow
 import * as React from 'react';
-// import { StaticQuery, graphql, Link } from 'gatsby';
-// import { uniqBy } from 'lodash';
+import { StaticQuery, graphql, Link } from 'gatsby';
 
 const SpeakersPreview = (): React.Node => (
   <div className="speakers-preview-wrapper">
-    {/* <StaticQuery
+    <StaticQuery
       query={graphql`
         query ShowSpeakersQuery {
-          allMarkdownRemark(limit: 4, filter: { frontmatter: { templateKey: { eq: "eventsTemplate" } } }) {
+          allMarkdownRemark(limit: 4, filter: { frontmatter: { templateKey: { eq: "speakersTemplate" } } }) {
             edges {
               node {
                 frontmatter {
-                  speakerName
+                  title
+                  speakersDescription
                   speakersImage
-                  speakerJob
+                  speakersJob
                 }
               }
             }
@@ -23,19 +23,19 @@ const SpeakersPreview = (): React.Node => (
       `}
       render={(data: Object): React.Node => {
         console.log(data);
-        let filterdData = uniqBy(data.allMarkdownRemark.edges, 'node.frontmatter.speakerName');
         return (
           <div className="speaker-preview">
-            {filterdData.map((item: Object): React.Node => (
+            {data.allMarkdownRemark.edges.map((item: Object): React.Node => (
               <div
                 className="speaker"
-                key={item.node.frontmatter.speakerName}
+                key={item.node.frontmatter.title}
                 style={{ backgroundImage: `url(${item.node.frontmatter.speakersImage.replace('/static', '')})` }}
               >
                 <div className="speaker-card">
                   <div className="info-wrapper">
-                    <div className="title">{item.node.frontmatter.speakerName}</div>
-                    <div className="job">{item.node.frontmatter.speakerJob}</div>
+                    <div className="title">{item.node.frontmatter.title}</div>
+                    <div className="job">{item.node.frontmatter.speakersJob}</div>
+                    <div className="description">{item.node.frontmatter.speakersDescription}</div>
                   </div>
                 </div>
               </div>
@@ -43,10 +43,10 @@ const SpeakersPreview = (): React.Node => (
           </div>
         );
       }}
-    /> */}
-    {/* <Link className="button read-more speaker-btn" to="/speakers">
+    />
+    <Link className="button read-more speaker-btn" to="/speakers">
       Show more
-    </Link> */}
+    </Link>
   </div>
 );
 

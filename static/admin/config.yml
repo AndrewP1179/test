@@ -60,7 +60,7 @@ collections:
           collection: 'speakers',
           searchFields: 'title',
           valueField: 'title',
-          displayFields: ['title', 'speakersJob'],
+          displayFields: 'title',
         }
   - label: 'sponsors'
     name: 'sponsors'
