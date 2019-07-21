@@ -17,7 +17,7 @@ type PropsType = { location: Object };
 
 const HomePage = (props: PropsType): React.Node => (
   <React.Fragment>
-    <Scroller />
+    {/* <Scroller /> */}
     <Layout location={props.location.pathname}>
       <Element name="home">
         <Masthead />
