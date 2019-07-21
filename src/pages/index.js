@@ -21,7 +21,6 @@ const HomePage = (props: PropsType): React.Node => (
     <MediaQuery minWidth={768}>
       <Scroller />
     </MediaQuery>
-
     <Layout location={props.location.pathname}>
       <Element name="home">
         <Masthead />

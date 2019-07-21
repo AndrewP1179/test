@@ -22,7 +22,6 @@ const SpeakersPreview = (): React.Node => (
         }
       `}
       render={(data: Object): React.Node => {
-        console.log(data);
         return (
           <div className="speaker-preview">
             {data.allMarkdownRemark.edges.map((item: Object): React.Node => (

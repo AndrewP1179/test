@@ -8,8 +8,7 @@ import Layout from '../components/layout/Layout';
 type PropsType = { data: string, speakerData: Object };
 
 const EventsTemplate = (props: PropsType): React.Node => {
-  console.log(props);
-  return (
+   return (
     <Layout>
       <div className="event-post-container">
         <div className="event-post">
