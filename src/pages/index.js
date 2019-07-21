@@ -18,11 +18,11 @@ type PropsType = { location: Object };
 
 const HomePage = (props: PropsType): React.Node => (
   <div>
-    <MediaQuery minWidth={768}>
-      <div className="scroller">
+    <div className="scroller">
+      <MediaQuery minWidth={768}>
         <Scroller />
-      </div>
-    </MediaQuery>
+      </MediaQuery>
+    </div>
     <Layout location={props.location.pathname}>
       <Element name="home">
         <Masthead />
