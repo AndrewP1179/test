@@ -74,4 +74,4 @@ collections:
         widget: 'list'
         identifier_field: sponsor
         fields:
-          - { label: 'sponsor', name: 'sponsor', widget: 'image' }
+          - { label: 'sponsor', name: 'sponsor's image, widget: 'image' }
