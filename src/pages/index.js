@@ -17,35 +17,32 @@ import Venue from '../components/venue/Venue';
 type PropsType = { location: Object };
 
 const HomePage = (props: PropsType): React.Node => (
-  <div>
+  <Layout location={props.location.pathname}>
     <MediaQuery minWidth={768}>
       <Scroller />
     </MediaQuery>
-
-    <Layout location={props.location.pathname}>
-      <Element name="home">
-        <Masthead />
-      </Element>
-      <Element name="about">
-        <AboutPreview />
-      </Element>
-      <Element name="speakers">
-        <SpeakersPreview />
-      </Element>
-      <Element name="events">
-        <EventsPreview />
-      </Element>
-      <Element name="sponsors">
-        <SponsorsPreview />
-      </Element>
-      <Element name="venue">
-        <Venue />
-      </Element>
-      <Element name="blog">
-        <BlogPreview />
-      </Element>
-    </Layout>
-  </div>
+    <Element name="home">
+      <Masthead />
+    </Element>
+    <Element name="about">
+      <AboutPreview />
+    </Element>
+    <Element name="speakers">
+      <SpeakersPreview />
+    </Element>
+    <Element name="events">
+      <EventsPreview />
+    </Element>
+    <Element name="sponsors">
+      <SponsorsPreview />
+    </Element>
+    <Element name="venue">
+      <Venue />
+    </Element>
+    <Element name="blog">
+      <BlogPreview />
+    </Element>
+  </Layout>
 );
 
 export default HomePage;
