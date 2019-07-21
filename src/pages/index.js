@@ -4,8 +4,7 @@ import React from 'react';
 import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 /*eslint-enable */
 import MediaQuery from 'react-responsive';
-import Layout from '../components/layout/Layout';
-import Scroller from '../components/layout/Scroller';
+import { Scroller, Layout } from '../components/layout';
 import Masthead from '../components/header/Masthead';
 import AboutPreview from '../components/about/AboutPreview';
 import BlogPreview from '../components/blog/BlogPreview';
@@ -18,11 +17,9 @@ type PropsType = { location: Object };
 
 const HomePage = (props: PropsType): React.Node => (
   <div>
-    <div className="scroller">
-      <MediaQuery minWidth={768}>
-        <Scroller />
-      </MediaQuery>
-    </div>
+    <MediaQuery minWidth={768}>
+      <Scroller />
+    </MediaQuery>
     <Layout location={props.location.pathname}>
       <Element name="home">
         <Masthead />
