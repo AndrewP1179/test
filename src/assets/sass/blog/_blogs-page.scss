@@ -30,6 +30,26 @@
 .blogs-page-wrapper {
   padding-top: rem(125px);
   padding-bottom: rem(210px);
+  //Reponsive
+  @include mq($until: desktop) {
+    padding-top: rem(85px);
+  }
+  .blog {
+    width: 33.333%;
+    //Reponsive
+    @include mq($until: desktop) {
+      width: 50%;
+    }
+    @include mq($until: tablet) {
+      width: 100%;
+    }
+  }
+  .blogs-preview {
+    //Reponsive
+    @include mq($until: desktop) {
+      margin-top: rem(0);
+    }
+  }
 }
 .blog-post-container {
   padding-top: rem(210px);

@@ -3,6 +3,10 @@
   width: 100%;
   position: relative;
   text-align: center;
+  // Responsive
+  @include mq($until: tablet) {
+    height: 340px;
+  }
   .indexes {
     margin-bottom: rem(80px);
   }

@@ -9,17 +9,19 @@ const EventsPage = (props: Object): React.Node => {
     <Layout>
       <div className="events-preview">
         {props.filteredData.map((item: Object): React.Node => (
-          <div className="events-wrapper" key={item.date}>
+          <div className="event-block-wrapper" key={item.date}>
             <div className="event-date">{item.date}</div>
-            {item.events.map((event: Object): React.Node => (
-              <div className="event" key={event.node.frontmatter.path}>
-                <div className="title">{event.node.frontmatter.title}</div>
-                <div className="speaker-name">{event.node.frontmatter.speakerName}</div>
-                <Link to={event.node.frontmatter.path}>
-                  <div className="button">Read more</div>
-                </Link>
-              </div>
-            ))}
+            <div className="events-wrapper">
+              {item.events.map((event: Object): React.Node => (
+                <div className="event" key={event.node.frontmatter.path}>
+                  <div className="title">{event.node.frontmatter.title}</div>
+                  <div className="speaker-name">{event.node.frontmatter.relation}</div>
+                  <Link to={event.node.frontmatter.path}>
+                    <div className="button">Read more</div>
+                  </Link>
+                </div>
+              ))}
+            </div>
           </div>
         ))}
       </div>
@@ -69,7 +71,7 @@ export const pageQuery = graphql`
             path
             title
             time
-            speakerName
+            relation
           }
         }
       }

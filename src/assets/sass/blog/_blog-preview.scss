@@ -20,9 +20,26 @@
       size: cover;
       position: center;
     }
+    // Responsive
+    @include mq($until: desktop) {
+      width: 50%;
+    }
+    @include mq($until: tablet) {
+      width: 100%;
+    }
     &:hover {
       .blog-card {
         opacity: 1;
+      }
+    }
+  }
+  .blog-card {
+    .title {
+      text-transform: initial;
+      font-size: rem(26px);
+      // Responsive
+      @include mq($until: desktop) {
+        font-size: rem(22px);
       }
     }
   }

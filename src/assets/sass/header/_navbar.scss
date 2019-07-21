@@ -34,6 +34,7 @@
 
 .responisve-navbar {
   position: fixed;
+  top: 0;
   padding: rem(30px 0);
   width: 100%;
   background-color: #0d0d59;
@@ -60,12 +61,21 @@
       text-align: center;
       margin-top: rem(120px);
     }
-    li {
+    li,
+    a {
       margin-top: rem(35px);
       @include bold;
       font-size: rem(23px);
       color: #fff;
+      text-decoration: none;
       cursor: pointer;
+    }
+    a {
+      &.active {
+        li {
+          color: #ff005a;
+        }
+      }
     }
     img {
       float: right;
