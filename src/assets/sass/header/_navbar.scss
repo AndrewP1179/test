@@ -4,11 +4,11 @@
   z-index: 10;
   width: 100%;
   .nav-list {
-    padding: rem(95px);
+    padding: rem(95px 60px);
     text-align: center;
     // Responsive
     @include mq($until: desktop) {
-      padding: rem(95px 30px);
+      padding: rem(95px 0);
     }
     li,
     a {
@@ -27,7 +27,7 @@
       padding: rem(5px);
       // Responsive
       @include mq($until: wide) {
-        margin: rem(0 18px);
+        margin: rem(0 15px);
       }
     }
     a {

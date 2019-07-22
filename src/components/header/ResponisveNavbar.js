@@ -32,6 +32,9 @@ const ResponisveNavbar = (props: PropsType): React.Node => (
           <li>
             <Link to="/blogs">News</Link>
           </li>
+          <li>
+            <Link to="/jobs">Jobs</Link>
+          </li>
         </ul>
       </div>
     ) : (
@@ -62,6 +65,9 @@ const ResponisveNavbar = (props: PropsType): React.Node => (
           <LinkTo activeClass="home-active active" to="blog" spy smooth duration={500}>
             <li onClick={(): boolean => props.setState({ show: !props.show })}>News</li>
           </LinkTo>
+          <Link to="/jobs">
+            <li>Jobs</li>
+          </Link>
         </ul>
       </div>
     )}

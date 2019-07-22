@@ -23,6 +23,9 @@ const Navbar = (props: PropsType): React.Node => (
         <li>
           <Link to="/blogs">News</Link>
         </li>
+        <li>
+          <Link to="/jobs">Jobs</Link>
+        </li>
       </ul>
     ) : (
       <ul className="nav-list">
@@ -47,6 +50,9 @@ const Navbar = (props: PropsType): React.Node => (
         <LinkTo activeClass="home-active active" to="blog" spy smooth duration={500}>
           <li>News</li>
         </LinkTo>
+        <Link to="/jobs">
+          <li>Jobs</li>
+        </Link>
       </ul>
     )}
   </div>
