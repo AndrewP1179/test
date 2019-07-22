@@ -11,7 +11,6 @@ const Template = ({ data }: PropsType): React.Node => {
   const { frontmatter, html } = markdownRemark;
   return (
     <Layout>
-      {console.log(data)}
       <div className="blog-post-container">
         <div className="blog-post">
           <div className="title">
@@ -19,7 +18,6 @@ const Template = ({ data }: PropsType): React.Node => {
               {frontmatter.title}
             </FitText>
           </div>
-
           <div className="blog-post-content" dangerouslySetInnerHTML={{ __html: html }} />
         </div>
       </div>

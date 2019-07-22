@@ -1,0 +1,10 @@
+.not-found {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  @include bold;
+  font-size: rem(60px);
+  color: rgb(13, 13, 89);
+}

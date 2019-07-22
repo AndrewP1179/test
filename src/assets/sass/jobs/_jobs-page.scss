@@ -1,0 +1,39 @@
+.jobs-block-wrapper {
+  float: left;
+  width: 33.33333%;
+  // Responsive
+  @include mq($until: desktop) {
+    width: 50%;
+  }
+  @include mq($until: tablet) {
+    width: 100%;
+  }
+  .job {
+    padding: rem(15px);
+    margin-bottom: rem(50px);
+    .title {
+      margin-bottom: rem(10px);
+      font-size: rem(22px);
+      @include bold;
+      color: rgb(13, 13, 89);
+    }
+    .organization {
+      margin-bottom: rem(15px);
+      @include bold;
+
+      .company {
+        color: rgb(13, 13, 89);
+      }
+    }
+    .button {
+      margin-top: rem(15px);
+      border-color: rgb(13, 13, 89);
+      color: rgb(13, 13, 89);
+    }
+    .job-post-content {
+      padding-right: rem(90px);
+      @include thin;
+      line-height: 1.3;
+    }
+  }
+}

@@ -68,7 +68,9 @@
   }
 }
 
-.events-preview {
+.events-preview,
+.jobs-preview {
+  @include clearfix;
   padding: rem(215px 60px 220px 60px);
   // Responsive
   @include mq($until: tablet) {
