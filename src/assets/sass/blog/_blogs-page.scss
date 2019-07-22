@@ -3,6 +3,10 @@
   max-width: 80%;
   margin: 0 auto;
   padding-bottom: rem(150px);
+  //Reponsive
+  @include mq($until: tablet) {
+    padding-top: rem(130px) !important;
+  }
   .title {
     margin-bottom: rem(50px);
     text-align: center;

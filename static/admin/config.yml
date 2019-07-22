@@ -28,6 +28,17 @@ collections:
       - { name: 'date', label: 'Date', widget: 'date', format: 'YYYY-MM-DD' }
       - { name: 'image', label: 'Cover Image', widget: 'image' }
       - { name: 'body', label: 'Body', widget: 'markdown' }
+  - name: 'job'
+    label: 'Job'
+    folder: 'jobs'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}_{{slug}}'
+    fields:
+      - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'jobTemplate' }
+      - { name: 'title', label: 'Title' }
+      - { name: 'organization', label: 'Organization' }
+      - { name: 'path', label: 'Path', default: '/jobs/' }
+      - { name: 'body', label: 'Body', widget: 'markdown' }
   - name: 'pages'
     label: 'Pages'
     files:
@@ -74,4 +85,4 @@ collections:
         widget: 'list'
         identifier_field: sponsor
         fields:
-          - { label: 'sponsor', name: 'sponsor's image, widget: 'image' }
+          - { label: 'sponsor', name: "sponsor's image", widget: 'image' }

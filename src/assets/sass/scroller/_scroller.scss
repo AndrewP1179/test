@@ -4,6 +4,10 @@
   top: 50%;
   transform: translateY(-50%);
   z-index: 5;
+  // Responsive
+  @include mq($until: tablet) {
+    display: none;
+  }
   .active {
     .title {
       opacity: 1 !important;

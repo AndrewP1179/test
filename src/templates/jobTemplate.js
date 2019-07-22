@@ -11,6 +11,7 @@ const Template = ({ data }: PropsType): React.Node => {
   const { frontmatter, html } = markdownRemark;
   return (
     <Layout>
+      {console.log(data)}
       <div className="blog-post-container">
         <div className="blog-post">
           <div className="title">
@@ -19,8 +20,6 @@ const Template = ({ data }: PropsType): React.Node => {
             </FitText>
           </div>
 
-          <div className="date">Date: {frontmatter.date}</div>
-          <img className="image" src={frontmatter.image.replace('/static', '')} alt="" />
           <div className="blog-post-content" dangerouslySetInnerHTML={{ __html: html }} />
         </div>
       </div>
@@ -30,14 +29,13 @@ const Template = ({ data }: PropsType): React.Node => {
 export default Template;
 
 export const pageQuery = graphql`
-  query BlogPostByPath($path: String!) {
+  query JobPost($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       frontmatter {
-        path
         title
-        date
-        image
+        organization
+        path
       }
     }
   }

@@ -2,7 +2,6 @@
 import * as React from 'react';
 
 import { Link } from 'react-scroll';
-/*eslint-enable */
 
 const Scroller = (): React.Node => (
   <div className="scroller">

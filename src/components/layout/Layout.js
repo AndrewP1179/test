@@ -1,6 +1,5 @@
 //@flow
 import * as React from 'react';
-import MediaQuery from 'react-responsive';
 import Navbar from '../header/Navbar';
 import ResponisveNavbar from '../header/ResponisveNavbar';
 import Footer from '../footer/Footer';
@@ -9,13 +8,14 @@ type PropsType = { children: React.Node, location: string };
 
 const Layout = (props: PropsType): React.Node => (
   <div className="layout">
-    <MediaQuery minWidth={992}>
+    <div className="full-nav">
       <Navbar location={props.location} />
-    </MediaQuery>
-    <MediaQuery maxWidth={992}>
+    </div>
+    <div className="responsive-nav">
       <ResponisveNavbar location={props.location} />
-    </MediaQuery>
-    {props.children}
+    </div>
+
+    <div className="children">{props.children}</div>
     <Footer />
   </div>
 );

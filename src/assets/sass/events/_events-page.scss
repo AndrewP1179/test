@@ -4,17 +4,36 @@
     margin-bottom: rem(60px);
   }
   .date-wrapper {
+    //Responsive
+    @include mq($until: wide) {
+      margin-top: rem(60px);
+      text-align: center;
+    }
+    .date-block {
+      //Responsive
+      @include mq($until: wide) {
+        display: inline-block;
+        text-align: left;
+      }
+    }
     .time,
     .place {
       font-size: rem(25px);
       @include bold;
-
       color: rgb(13, 13, 89);
+      //Responsive
+      @include mq($until: tablet) {
+        font-size: rem(14px);
+      }
       .question {
         font-size: rem(45px);
         @include bold;
         margin-right: rem(15px);
         color: #52ffff;
+        //Responsive
+        @include mq($until: tablet) {
+          font-size: rem(25px);
+        }
       }
     }
     .time {
@@ -26,6 +45,10 @@
     display: inline-block;
     width: 50%;
     vertical-align: middle;
+    //Responsive
+    @include mq($until: wide) {
+      width: 100%;
+    }
   }
   .speaker {
     text-align: center;
@@ -40,12 +63,17 @@
     }
     .speaker-job {
       @include thin;
+      color: rgb(13, 13, 89);
     }
   }
 }
 
 .events-preview {
   padding: rem(215px 60px 220px 60px);
+  // Responsive
+  @include mq($until: tablet) {
+    padding: rem(100px 60px 220px 60px);
+  }
   .event-block-wrapper {
     border-bottom: 1px dashed rgb(13, 13, 89);
   }

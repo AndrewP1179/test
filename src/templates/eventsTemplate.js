@@ -1,6 +1,7 @@
 //@flow
 import React from 'react';
 import { graphql } from 'gatsby';
+import FitText from '@kennethormandy/react-fittext';
 import { compose, withHandlers, lifecycle, withStateHandlers } from 'recompose';
 import axios from 'axios';
 import Layout from '../components/layout/Layout';
@@ -8,11 +9,15 @@ import Layout from '../components/layout/Layout';
 type PropsType = { data: string, speakerData: Object };
 
 const EventsTemplate = (props: PropsType): React.Node => {
-   return (
+  return (
     <Layout>
       <div className="event-post-container">
         <div className="event-post">
-          <div className="title">{props.data.markdownRemark.frontmatter.title}</div>
+          <div className="title">
+            <FitText minFontSize={35} maxFontSize={50} compressor={1.5}>
+              {props.data.markdownRemark.frontmatter.title}
+            </FitText>
+          </div>
 
           <img
             className="image"
@@ -23,18 +28,20 @@ const EventsTemplate = (props: PropsType): React.Node => {
           <div className="content-wrapper">
             <div className="speaker">
               <img src={props.speakerData.speakersImage && props.speakerData.speakersImage.replace('/static', '')} />
-              <div className="speaker-name">{props.speakerData.speakerName}</div>
-              <div className="speaker-job">{props.speakerData.speakerJob}</div>
+              <div className="speaker-name">{props.speakerData.title}</div>
+              <div className="speaker-job">{props.speakerData.speakersJob}</div>
             </div>
 
             <div className="date-wrapper">
-              <div className="time">
-                <span className="question">When? </span>
-                {props.data.markdownRemark.frontmatter.time.replace(' ', ', ')}
-              </div>
-              <div className="place">
-                <span className="question">Where? </span>
-                {props.data.markdownRemark.frontmatter.place}
+              <div className="date-block">
+                <div className="time">
+                  <span className="question">When?</span>
+                  {props.data.markdownRemark.frontmatter.time.replace(' ', ', ')}
+                </div>
+                <div className="place">
+                  <span className="question">Where?</span>
+                  {props.data.markdownRemark.frontmatter.place}
+                </div>
               </div>
             </div>
           </div>
