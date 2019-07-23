@@ -41,10 +41,10 @@ const Navbar = (props: PropsType): React.Node => (
         <LinkTo activeClass="home-active active" to="events" spy smooth duration={500}>
           <li>Agenda</li>
         </LinkTo>
-        <LinkTo activeClass="home-active active" to="sponsors" spy smooth duration={500}>
+        <LinkTo activeClass="home-active active" to="venue" spy smooth duration={500}>
           <li>Location</li>
         </LinkTo>
-        <LinkTo activeClass="home-active active" to="venue" spy smooth duration={500}>
+        <LinkTo activeClass="home-active active" to="sponsors" spy smooth duration={500}>
           <li>Partners</li>
         </LinkTo>
         <LinkTo activeClass="home-active active" to="blog" spy smooth duration={500}>
