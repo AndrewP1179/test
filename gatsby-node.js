@@ -2,6 +2,8 @@
 
 const path = require('path');
 
+const gatsby = require('gatsby');
+
 exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators;
 

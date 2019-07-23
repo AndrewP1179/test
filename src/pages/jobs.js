@@ -6,7 +6,6 @@ import Layout from '../components/layout/Layout';
 const JobsPage = ({ data }: Object): React.Node => {
   return (
     <Layout>
-      {console.log(data)}
       <div className="jobs-preview">
         {data.allMarkdownRemark.edges.map((item: Object): React.Node => (
           <div className="jobs-block-wrapper" key={item.node.frontmatter.path}>

@@ -74,27 +74,46 @@
   padding: rem(215px 60px 220px 60px);
   // Responsive
   @include mq($until: tablet) {
-    padding: rem(100px 60px 220px 60px);
+    padding: rem(100px 30px 220px 30px);
   }
   .event-block-wrapper {
     border-bottom: 1px dashed rgb(13, 13, 89);
+    // Responsive
+    @include mq($until: tablet) {
+      margin-top: rem(30px);
+    }
   }
   .event-date,
   .events-wrapper {
     display: table-cell;
     vertical-align: middle;
+    // Responsive
+    @include mq($until: tablet) {
+      display: block;
+      width: 100%;
+      @include clearfix;
+    }
   }
   .event-date {
     width: 160px;
     @include bold;
     color: rgb(13, 13, 89);
+    // Responsive
+    @include mq($until: tablet) {
+      margin-bottom: rem(15px);
+      text-align: center;
+      width: 100%;
+      font-size: rem(22px);
+    }
   }
   .events-wrapper {
-    .event {
+    .event-wrapper {
       min-width: 50%;
       float: left;
       vertical-align: middle;
-      padding: rem(30px 0);
+    }
+    .event {
+      padding: rem(30px 60px 30px 0);
       .title {
         margin-bottom: rem(15px);
         color: rgb(13, 13, 89);

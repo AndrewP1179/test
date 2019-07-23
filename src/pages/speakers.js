@@ -36,7 +36,6 @@ export const pageQuery = graphql`
         node {
           frontmatter {
             title
-            speakersDescription
             speakersImage
             speakersJob
             speakersDescription

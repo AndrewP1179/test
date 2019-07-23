@@ -13,12 +13,14 @@ const EventsPage = (props: Object): React.Node => {
             <div className="event-date">{item.date}</div>
             <div className="events-wrapper">
               {item.events.map((event: Object): React.Node => (
-                <div className="event" key={event.node.frontmatter.path}>
-                  <div className="title">{event.node.frontmatter.title}</div>
-                  <div className="speaker-name">{event.node.frontmatter.relation}</div>
-                  <Link to={event.node.frontmatter.path}>
-                    <div className="button">Read more</div>
-                  </Link>
+                <div className="event-wrapper" key={event.node.frontmatter.path}>
+                  <div className="event">
+                    <div className="title">{event.node.frontmatter.title}</div>
+                    <div className="speaker-name">Speaker: {event.node.frontmatter.relation}</div>
+                    <Link to={event.node.frontmatter.path}>
+                      <div className="button">Read more</div>
+                    </Link>
+                  </div>
                 </div>
               ))}
             </div>
