@@ -2,10 +2,10 @@
 templateKey: eventsTemplate
 title: 'IT Networking Event #5'
 eventsImage: /static/assets/21122633_1282477328547307_1551200534720500277_o.jpg
-path: /events/rtntrntnsdgsdg
+path: /events/rtntrntnsfgsdgsdg
 time: 'July 10, 2019 12:30 PM'
 place: asfafasf
-relation: ' Anya Abchiche'
+relation: Nagailic Sergiu
 ---
 
 
