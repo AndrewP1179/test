@@ -1,6 +1,6 @@
 ---
 templateKey: eventsTemplate
-title: 'IT Networking Event #5'
+title: 'IT Networking Event #5ag'
 eventsImage: /static/assets/21122633_1282477328547307_1551200534720500277_o.jpg
 path: /events/rtntrntnsfgsdgsdg
 time: 'July 10, 2019 12:30 PM'
