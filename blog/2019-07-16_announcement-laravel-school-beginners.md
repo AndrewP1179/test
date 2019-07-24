@@ -3,7 +3,7 @@ templateKey: blogTemplate
 title: Announcement Femeie Restart Project
 path: /blogs/Announcement
 date: '2019-07-25'
-image: /static/assets/laravel-2.png
+image: /static/assets/cover.jpg
 ---
 Many women in Moldova at some moment of their life cycle are required to get a career break, and this is due to different reasons, most of them are primarily personal. It may be due to pregnancy, childbirth, to take care of children or the elderly. Another reason is the lack of expected career growth or development.
 
