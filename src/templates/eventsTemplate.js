@@ -9,6 +9,7 @@ type PropsType = { data: string, speakerData: Object, onFiltering: any => any };
 
 const EventsTemplate = (props: PropsType): React.Node => {
   const filteredArray = props.onFiltering(props.data.speakers.edges, props.data.eventsQuery.frontmatter.relation);
+  console.log(props, filteredArray);
   return (
     <Layout>
       <div className="event-post-container">
@@ -55,7 +56,10 @@ const EventsTemplate = (props: PropsType): React.Node => {
 const enhance = compose(
   withHandlers({
     onFiltering: (): Object => (speakerData: Object, eventData: Object): Object => {
-      return speakerData.find((speaker: Object): React.Node => speaker.node.frontmatter.title === eventData);
+      return speakerData.find((speaker: Object): React.Node => {
+        console.log(speaker);
+        speaker.node.frontmatter.title === eventData;
+      });
     },
   }),
 );

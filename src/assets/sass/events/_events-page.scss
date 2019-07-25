@@ -71,7 +71,7 @@
 .events-preview,
 .jobs-preview {
   @include clearfix;
-  padding: rem(215px 60px 220px 60px);
+  padding: rem(215px 60px 370px 60px);
   // Responsive
   @include mq($until: tablet) {
     padding: rem(100px 30px 220px 30px);

@@ -81,7 +81,7 @@
 }
 .speakers-pages {
   margin-top: rem(220px);
-  margin-bottom: rem(250px);
+  margin-bottom: rem(400px);
   background-color: #fff;
   //Reponsive
   @include mq($until: desktop) {

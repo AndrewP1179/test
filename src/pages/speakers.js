@@ -7,7 +7,7 @@ const EventsPage = ({ data }: Object): React.Node => {
   return (
     <Layout>
       <div className="speakers-preview-wrapper speakers-pages">
-        {data.allMarkdownRemark.edges.map((item: Object): React.Node => (
+        {data.allMarkdownRemark.edges.slice(1).map((item: Object): React.Node => (
           <div
             className="speaker"
             key={item.node.frontmatter.title}

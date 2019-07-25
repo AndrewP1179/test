@@ -33,7 +33,7 @@
 }
 .blogs-page-wrapper {
   padding-top: rem(125px);
-  padding-bottom: rem(210px);
+  padding-bottom: rem(350px);
   //Reponsive
   @include mq($until: desktop) {
     padding-top: rem(85px);
