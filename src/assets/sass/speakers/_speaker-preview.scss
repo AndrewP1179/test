@@ -3,15 +3,19 @@
   background-color: #ff005a;
   text-align: center;
   .empty-block {
+    position: absolute;
+    top: 50%;
+    width: 100%;
     color: #ffffff;
     @include bold;
-    font-size: rem(25px);
+    font-size: rem(55px);
     text-align: center;
-    transform: translateY(50%);
+    transform: translateY(-50%);
   }
   .speaker-preview {
     @include clearfix;
     height: 500px;
+    position: relative;
   }
   .speaker {
     position: relative;

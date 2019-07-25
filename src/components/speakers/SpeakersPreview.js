@@ -7,7 +7,7 @@ const SpeakersPreview = (): React.Node => (
     <StaticQuery
       query={graphql`
         query ShowSpeakersQuery {
-          allMarkdownRemark(limit: 4, filter: { frontmatter: { templateKey: { eq: "speakersTemplate" } } }) {
+          allMarkdownRemark(skip: 1, limit: 4, filter: { frontmatter: { templateKey: { eq: "speakersTemplate" } } }) {
             edges {
               node {
                 frontmatter {
@@ -22,9 +22,11 @@ const SpeakersPreview = (): React.Node => (
         }
       `}
       render={(data: Object): React.Node => {
+        console.log(data.allMarkdownRemark.edges.length);
+        const lengthArray = data.allMarkdownRemark.edges.length;
         return (
           <div className="speaker-preview">
-            {data.allMarkdownRemark.edges ? (
+            {data.allMarkdownRemark.edges[lengthArray - 1].node.frontmatter.title !== '' ? (
               data.allMarkdownRemark.edges.map((item: Object): React.Node => (
                 <div
                   className="speaker"
