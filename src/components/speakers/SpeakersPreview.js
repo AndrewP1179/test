@@ -22,7 +22,7 @@ const SpeakersPreview = (): React.Node => (
         }
       `}
       render={(data: Object): React.Node => {
-        console.log(data.allMarkdownRemark.edges.length);
+        console.log(data);
         const lengthArray = data.allMarkdownRemark.edges.length;
         return (
           <div className="speaker-preview">
