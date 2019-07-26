@@ -4,10 +4,13 @@ import { graphql } from 'gatsby';
 import Layout from '../components/layout/Layout';
 
 const EventsPage = ({ data }: Object): React.Node => {
+  const blankElement = data.allMarkdownRemark.edges.findIndex(
+    (item: Object): number => item.node.frontmatter.title === '',
+  );
   return (
     <Layout>
       <div className="speakers-preview-wrapper speakers-pages">
-        {data.allMarkdownRemark.edges.slice(1).map((item: Object): React.Node => (
+        {data.allMarkdownRemark.edges.slice(blankElement + 1).map((item: Object): React.Node => (
           <div
             className="speaker"
             key={item.node.frontmatter.title}

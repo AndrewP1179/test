@@ -22,12 +22,15 @@ const SpeakersPreview = (): React.Node => (
         }
       `}
       render={(data: Object): React.Node => {
-        console.log(data);
-        const lengthArray = data.allMarkdownRemark.edges.length;
+        const blankElement = data.allMarkdownRemark.edges.findIndex(
+          (item: Object): number => item.node.frontmatter.title === '',
+        );
+        console.log(data.allMarkdownRemark.edges.length);
+
         return (
           <div className="speaker-preview">
-            {data.allMarkdownRemark.edges[lengthArray - 1].node.frontmatter.title !== '' ? (
-              data.allMarkdownRemark.edges.slice(1).map((item: Object): React.Node => (
+            {data.allMarkdownRemark.edges.length > 1 ? (
+              data.allMarkdownRemark.edges.slice(blankElement + 1).map((item: Object): React.Node => (
                 <div
                   className="speaker"
                   key={item.node.frontmatter.title}
