@@ -57,8 +57,7 @@ const enhance = compose(
   withHandlers({
     onFiltering: (): Object => (speakerData: Object, eventData: Object): Object => {
       return speakerData.find((speaker: Object): React.Node => {
-        console.log(speaker);
-        speaker.node.frontmatter.title === eventData;
+        return speaker.node.frontmatter.title === eventData;
       });
     },
   }),
