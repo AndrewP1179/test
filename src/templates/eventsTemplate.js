@@ -56,9 +56,7 @@ const EventsTemplate = (props: PropsType): React.Node => {
 const enhance = compose(
   withHandlers({
     onFiltering: (): Object => (speakerData: Object, eventData: Object): Object => {
-      return speakerData.find((speaker: Object): React.Node => {
-        return speaker.node.frontmatter.title === eventData;
-      });
+      return speakerData.find((speaker: Object): React.Node => speaker.node.frontmatter.title === eventData);
     },
   }),
 );
