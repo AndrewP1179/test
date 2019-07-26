@@ -25,8 +25,6 @@ const SpeakersPreview = (): React.Node => (
         const blankElement = data.allMarkdownRemark.edges.findIndex(
           (item: Object): number => item.node.frontmatter.title === '',
         );
-        console.log(data.allMarkdownRemark.edges.length);
-
         return (
           <div className="speaker-preview">
             {data.allMarkdownRemark.edges.length > 1 ? (
