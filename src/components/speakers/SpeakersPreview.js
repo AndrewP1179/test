@@ -25,9 +25,10 @@ const SpeakersPreview = (): React.Node => (
         const blankElement = data.allMarkdownRemark.edges.findIndex(
           (item: Object): number => item.node.frontmatter.title === '',
         );
+
         return (
           <div className="speaker-preview">
-            {data.allMarkdownRemark.edges.length > 1 ? (
+            {data.allMarkdownRemark.edges.length && data.allMarkdownRemark.edges.length > 1 ? (
               data.allMarkdownRemark.edges.slice(blankElement + 1).map((item: Object): React.Node => (
                 <div
                   className="speaker"
