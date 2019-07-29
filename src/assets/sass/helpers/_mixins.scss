@@ -1,21 +1,5 @@
 @charset "UTF-8";
 
-/// Provides an easy way to include a clearfix for containing floats.
-///
-/// @link https://goo.gl/yP5hiZ
-///
-/// @example scss
-///   .element {
-///     @include clearfix;
-///   }
-///
-///   // CSS Output
-///   .element::after {
-///     clear: both;
-///     content: "";
-///     display: block;
-///   }
-
 @mixin clearfix {
   &::after {
     clear: both;
@@ -24,8 +8,7 @@
   }
 }
 
-// A mixin taht convert from px to rem
-// list-separator polyfill by Hugo Giraudel (https://sass-compatibility.github.io/#list_separator_function)
+// A mixin that converts from px to rem
 @function rem-separator($list) {
   @if function-exists('list-separator') == true {
     @return list-separator($list);

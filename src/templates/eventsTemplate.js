@@ -22,11 +22,13 @@ const EventsTemplate = (props: PropsType): React.Node => {
           <img className="image" src={props.data.eventsQuery.frontmatter.eventsImage.replace('/static', '')} alt="" />
           <div className="blog-post-content" dangerouslySetInnerHTML={{ __html: props.data.eventsQuery.html }} />
           <div className="content-wrapper">
-            <div className="speaker">
-              <img src={filteredArray.node.frontmatter.speakersImage.replace('/static', '')} />
-              <div className="speaker-name">{filteredArray.node.frontmatter.title}</div>
-              <div className="speaker-job">{filteredArray.node.frontmatter.speakersJob}</div>
-            </div>
+            {filteredArray ? (
+              <div className="speaker">
+                <img src={filteredArray.node.frontmatter.speakersImage.replace('/static', '')} />
+                <div className="speaker-name">{filteredArray.node.frontmatter.title}</div>
+                <div className="speaker-job">{filteredArray.node.frontmatter.speakersJob}</div>
+              </div>
+            ) : null}
 
             <div className="date-wrapper">
               <div className="date-block">
