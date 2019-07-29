@@ -16,3 +16,5 @@ We understand how challenging is to look for a new job after a long break, with 
 That's where ‘’**Femeie Restart project**’’ comes in. We are committed to helping those committed women willing to get all the information & education needed to find a job and to learn more about the new work possibilities and how to keep up with digital trends. 
 
 Our systematic approach includes **skills assessment, job search training,** and **mentoring** that helps women ensure they are prepared and sets them up for success in their search for employment and beyond.
+
+This is a **FREE program accessible to everyone,** if you are committed to learn and put the necessary efforts to succeed in your Job search with the help of our mentors, check the Agenda and register here.
