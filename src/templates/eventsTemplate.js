@@ -23,12 +23,7 @@ const EventsTemplate = (props: PropsType): React.Node => {
           <div className="blog-post-content" dangerouslySetInnerHTML={{ __html: props.data.eventsQuery.html }} />
           <div className="content-wrapper">
             <div className="speaker">
-              <img
-                src={
-                  filteredArray.node.frontmatter.speakersImage &&
-                  filteredArray.node.frontmatter.speakersImage.replace('/static', '')
-                }
-              />
+              <img src={filteredArray.node.frontmatter.speakersImage.replace('/static', '')} />
               <div className="speaker-name">{filteredArray.node.frontmatter.title}</div>
               <div className="speaker-job">{filteredArray.node.frontmatter.speakersJob}</div>
             </div>
