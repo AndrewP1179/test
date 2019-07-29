@@ -1,10 +1,10 @@
 ---
 templateKey: eventsTemplate
-title: agagsgwgwrgwg
-eventsImage: /static/assets/20935062_1123341784434371_8686167862893783118_o.jpg
-path: /events/gfdegsdg
+title: Coming Soon
+eventsImage: /static/assets/cover.jpg
+path: /events/comingsoon
 time: 'July 23, 2019 3:55 PM'
-place: egertga
+place: iHUB
 relation: Nagailic Sergiu
 ---
-rrtbsrtbstwgwegwg
+Coming soon
