@@ -25,7 +25,7 @@
     border-radius: 6px;
   }
   .blog-post-content {
-    margin: rem(60px 0);
+    padding: rem(60px 0 230px 0);
     font-size: rem(19px);
     line-height: rem(40px);
     @include thin;
@@ -57,4 +57,5 @@
 }
 .blog-post-container {
   padding-top: rem(210px);
+  padding-bottom: rem(330px);
 }

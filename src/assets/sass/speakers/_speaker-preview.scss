@@ -80,8 +80,8 @@
   }
 }
 .speakers-pages {
-  margin-top: rem(220px);
-  margin-bottom: rem(400px);
+  padding-top: rem(220px);
+  padding-bottom: rem(400px);
   background-color: #fff;
   //Reponsive
   @include mq($until: desktop) {
@@ -89,5 +89,10 @@
   }
   .speaker {
     height: 400px;
+  }
+  .speakers-empty-block {
+    font-size: rem(43px);
+    text-align: center;
+    @include bold;
   }
 }
