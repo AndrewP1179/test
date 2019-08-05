@@ -38,7 +38,7 @@ const Scroller = (): React.Node => (
     <Link activeClass="venue-active active" to="venue" spy smooth={true} duration={500}>
       <div className="wrapper">
         <div className="dot"></div>
-        <div className="title">Venue</div>
+        <div className="title">Location</div>
       </div>
     </Link>
     <Link activeClass="blogs-active active" to="blog" spy smooth={true} duration={500}>
