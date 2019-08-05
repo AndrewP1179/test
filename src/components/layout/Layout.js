@@ -3,11 +3,13 @@ import * as React from 'react';
 import Navbar from '../header/Navbar';
 import ResponisveNavbar from '../header/ResponisveNavbar';
 import Footer from '../footer/Footer';
+import Metadata from '../metadata/Metadata';
 
 type PropsType = { children: React.Node, location: string };
 
 const Layout = (props: PropsType): React.Node => (
   <div className="layout">
+    <Metadata />
     <div className="full-nav">
       <Navbar location={props.location} />
     </div>
