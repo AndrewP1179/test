@@ -17,7 +17,7 @@ const Metadata = (props: Object): React.Node => (
         {/* {logo && <meta property="og:image" content={logo} />} */}
         {description && <meta property="og:description" content={description} />}
         {title && <meta property="og:title" content={title} />}
-        {siteUrl && <meta property="og:url" content={siteUrl} />}
+        {/* {siteUrl && <meta property="og:url" content={siteUrl} />} */}
       </Helmet>
     )}
   />
@@ -29,7 +29,8 @@ const query = graphql`
       siteMetadata {
         title
         description
-        siteUrl
+        # siteUrl
+        # logo
       }
     }
   }
